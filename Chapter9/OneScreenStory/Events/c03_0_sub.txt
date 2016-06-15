@@ -1,0 +1,521 @@
+﻿;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 第三章　勇者以外のイベント
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 長老×村人１
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[C3-7D-0]
+Begin
+	target		Elder
+	target		Folk1
+	condition	Hero	vs_dragon	1
+
+	dialog	Folk2		猛毒の大サソリの次は	火を吹くドラゴンですって？	なんだか最近騒々しいですねえ。
+	dialog	Folk1		なんか、どんどんヤバイ	話になってるよな。
+	dialog	Folk1		このまま順調に推移すると、	もうちょっと後には星を消し去る	超古代生物兵器とか現れるんじゃねえか？
+	dialog	FolkWoman	やはり、災いの時が	近づいているのでしょうか……。
+	dialog	Elder		うーむ……。
+	dialog	FolkGirl	ねえ、わざわいのときって、	なあに？
+	dialog	FolkWoman	いにしえの予言の書に記されている、	魔王の復活のときのことよ。
+	dialog	Elder		しかし、古の予言の書には、	復活した魔王を討ち倒す勇者の	存在も記されておる。
+	dialog	Elder		魔王の復活が予言通りなら、	勇者の存在もあって然るべしじゃ。
+End
+	;; 長老×村人２
+	[C3-7E-0]
+	Begin
+		target		Elder
+		target		Folk2
+		condition	Hero	vs_dragon	1
+	
+		call-event	C3-7D-0
+	End
+	;; 長老×女性
+	[C3-7F-0]
+	Begin
+		target		Elder
+		target		FolkWoman
+		condition	Hero	vs_dragon	1
+	
+		call-event	C3-7D-0
+	End
+	;; 長老×女の子
+	[C3-7G-0]
+	Begin
+		target		Elder
+		target		FolkGirl
+		condition	Hero	vs_dragon	1
+	
+		call-event	C3-7D-0
+	End
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 長老×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-7H-0]
+Begin
+	target		Elder
+	target		WaterSpirit
+	condition	Hero	vs_dragon	1
+
+	dialog	Elder		妙じゃな。最近、妙な気配に	付きまとわれるような	感覚に囚われることがある。
+	dialog	Elder		邪気は感じられぬ、悪霊の類では	ないようじゃが……。
+	dialog	WaterSpirit	さすが、この村の長。	と言いたいところだけど、	まぁだまだ霊能力が足りないようぽ。
+	dialog	WaterSpirit	勇者は、一発でボクの姿を視認したぽ。
+	dialog	WaterSpirit	10年早いんだぽ～。
+	dialog	WaterSpirit	普通の人にはボクは見えないぽ。
+	dialog	Elder		むむ……よくわからんが、	なんだか微妙に悔しい感じがするぞぃ……。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 長老×ロングホーンドラゴン
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-7I-0]
+Begin
+	target		Elder
+	target		Dragon
+	condition	Hero	vs_dragon	1
+
+	dialog	Elder	くっ！　ドラゴンめ！	出おったな！
+	dialog	Dragon	ぎゃああす！！（喜）
+	dialog	Elder	勇者どののお手を	煩わすまでもない！
+	dialog	Elder	ワシが直々に	退治てくれよう！
+	text			長老は、ヒョウガを唱えた！
+	text			しかし、MPがたりない！
+	dialog	Elder	きょ、今日はこのくらいに	しといてやるわ！さらば！
+
+	move	Elder	InitialPlace_Elder	1.0
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×村人２
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-9E-0]
+Begin
+	target		Folk1
+	target		Folk2
+	condition	Hero	vs_dragon	1
+	condition	Folk1	C3-9E	0
+
+	dialog	Folk1	ドラゴン、なあ。
+	dialog	Folk2	ドラゴン、ですよ。
+	dialog	Folk1	ピンとこねえなあ。
+	dialog	Folk2	だいたい、そんなもの	見たことないですからね。
+	dialog	Folk1	歯が尖ってて？
+	dialog	Folk2	炎を吐くようです。
+	dialog	Folk1	……。
+	dialog	Folk1	いや、さぁ。
+	dialog	Folk2	ねぇ。
+	dialog	Folk1	勇者さん、かわいそうに……。
+	dialog	Folk2	勇者さま、かわいそうに……。
+	set	Folk1	C3-9E	1
+End
+[C3-9E-0]
+Begin
+	target		Folk1
+	target		Folk2
+	condition	Hero	vs_dragon	1
+	condition	Folk1	C3-9E	1
+
+	dialog	Folk2	まあ、骨だけでも拾って	あげたいですね。
+	dialog	Folk1	焦げこげだろうけどな。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×女性
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-10F-0]
+Begin
+	target		Folk1
+	target		FolkWoman
+	condition	Hero	vs_dragon	1
+	condition	Folk1	C3-10F		0
+
+	dialog	Folk1		勇者さまも、次々と厄介事に	巻き込まれちまってなぁ。
+	dialog	FolkWoman	そうですね……。
+	dialog	FolkWoman		でも、この地方のドラゴンは、	まだ弱いものだそうですよ。
+	dialog	FolkWoman	吐く炎の温度も、摂氏1000度から	1500度と言われています。
+	dialog	Folk1		おめぇ、詳しいな。
+	dialog	FolkWoman	あの最強の生物と言われている、	クマムシの体を焼き尽くす	ことはできません。
+	dialog	FolkWoman	それに引き換え、冬のあいだ	王都の城壁に頻繁にチョッカイを	出してくるグレータードラゴンの……
+	dialog	FolkWoman	あの類のドラゴンの吐く炎の温度は、	9000度から10000度とも言われています。
+	dialog	FolkWoman	これは、さっきお話したクマムシが	一瞬で消し炭になる程の強さです。
+	dialog	Folk1		いや、クマムシを引き合いに	出されてもなぁ……。
+	dialog	Folk1		いずれにしても	人間なら消し炭どころか、	跡も残らねえんじゃねえか。
+
+	set		Folk1	C3-10F		1
+End
+[C3-10F-1]
+Begin
+	target		Folk1
+	target		FolkWoman
+	condition	Hero	vs_dragon	1
+	condition	Folk1	C3-10F		1
+
+	dialog	Folk1		勇者さん、大丈夫かな……。
+	dialog	FolkWoman	応援することしかできませんものね。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-10G-0]
+Begin
+	target		Folk1
+	target		FolkGirl
+	condition	Hero	vs_dragon	1
+	condition	Folk1	C3-10G		0
+
+	dialog	FolkGirl	どらごん、っていったい、	どんな動物なの？
+	dialog	Folk1		何か、円いらしいぜ。
+	dialog	FolkGirl	ひらべったい感じ？
+	dialog	Folk1		そうそう、	何か、模様が刻んであんの。
+	dialog	FolkGirl	そしたら、	棒でごいーんって鳴らすのね！
+	dialog	Folk1		おうおう、	よく知ってるな。
+	dialog	FolkGirl	炎はどこから出すの？
+	dialog	Folk1		炎？	……えー、炎は尻から出る！
+	dialog	FolkGirl	え、えぇ……	（本当なのかなぁ）。
+
+	set		Folk1	C3-10G		1
+End
+[C3-10G-1]
+Begin
+	target		Folk1
+	target		FolkGirl
+	condition	Hero	vs_dragon	1
+	condition	Folk1	C3-10G		1
+
+	dialog	FolkGirl	じゃあ、どらごんって本当に空を飛ぶの？
+	dialog	Folk1		うん。回転しながら飛ぶんだぜ。
+	dialog	Folk1		脚からは炎も出るぜ！
+	dialog	FolkGirl	ふぅん……	（この人絶対テキトーに言ってる！）
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-10H-0]
+Begin
+	target		Folk1
+	target		WaterSpirit
+	condition	Hero	vs_dragon	1
+	condition	Folk1	C3-10H	0
+
+	dialog	Folk1		やぁれやれ、やあっと一人になれたぜぇ。
+	dialog	WaterSpirit	一人きりきりじゃないぽ。
+	dialog	Folk1		あ。ちょっと小噺思いついちまったぜ。
+	dialog	Folk1		あーあー、おほん！
+	dialog	Folk1		傷つき、倒れてしまった勇者、	そんな勇者に想いを馳せ、少女は呟く……
+	dialog	Folk1		おお、勇者よ……	You Shall Return…….
+	dialog	Folk1		ぷっ！
+	dialog	Folk1		だぁっはっはっはっ！
+	dialog	Folk1		こりゃやべえ、	傑作の誕生だ。
+	dialog	WaterSpirit	す、すさまじい魔力ぽ。	体の三分の一が凍りついたぽ。
+	dialog	WaterSpirit	もうあいつに近づくのは	やめておいた方がいいぽ。
+
+	set	Folk1	C3-10H	1
+End
+[C3-10H-1]
+Begin
+	target		Folk1
+	target		WaterSpirit
+	condition	Hero	vs_dragon	1
+	condition	Folk1	C3-10H	1
+
+	dialog	WaterSpirit	くわばらくわばら……。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×ロングホーンドラゴン
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-10I-0]
+Begin
+	target		Folk1
+	target		Dragon
+	condition	Hero	vs_dragon	1
+
+	dialog	Folk1	あれ、なんだあ？	あの大きなトカゲ……。
+	dialog	Dragon	ぎゃああす！！（憤）
+	dialog	Folk1	ト、トカゲじゃなかったー。	のわーっ！
+	text			村の男は、逃げ出した！
+	move	Folk1	InitialPlace_Folk1	1.0
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人２×女性
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-12F-0]
+Begin
+	target		Folk2
+	target		FolkWoman
+	condition	Hero	vs_dragon	1
+	condition	Folk2	C3-12F	0
+
+	dialog	Folk2		いにしえの言い伝えによると……。
+	dialog	FolkWoman	はい？
+	dialog	Folk2		勇者はどうやって魔王を倒すか、	とくに触れられてないんですよね？
+	dialog	FolkWoman	そうですね。いろいろな艱難辛苦、	紆余曲折の果てに魔王を討ち倒す、	ということしか伝えられておりませんわ。
+	dialog	FolkWoman	このドラゴンの一件も同様に	艱難辛苦の一角なのでしょうね。
+	dialog	Folk2		毒を喰らって倒れるのも、	害虫駆除を依頼されるのも。
+	dialog	FolkWoman	ええ。その通りですわ。
+	dialog	FolkWoman	……いかがなさって？
+	dialog	Folk2		いや、勇者さまって本当に	大変だなあ、と思って。
+	dialog	FolkWoman	……（超他人事……）。
+
+	set	Folk2	C3-12F	1
+End
+[C3-12F-1]
+Begin
+	target		Folk2
+	target		FolkWoman
+	condition	Hero	vs_dragon	1
+	condition	Folk2	C3-12F	1
+
+	dialog	Folk2		いやー、しみじみ思いますよ。
+	dialog	Folk2		私、本当に勇者にならなくて	良かったなあ、って。
+	dialog	FolkWoman	ええ、わたしもあなたは	勇者に向いていないと思いますわ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人２×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-12G-0]
+Begin
+	target		Folk2
+	target		FolkGirl
+	condition	Hero	vs_dragon	1
+	condition	Folk2	C3-12G	0
+
+	dialog	FolkGirl	どらごんも、村を襲ってくると思う？
+	dialog	Folk2		どうだろうね。ドラゴンって、ああ見えて、	結構慎重な性格をしているという研究報告もあるし、	そうそう人間を襲ってはこないと思いますよ。
+
+	set		Folk2	C3-12G	1
+End
+[C3-12G-1]
+Begin
+	target		Folk2
+	target		FolkGirl
+	condition	Hero	vs_dragon	1
+	condition	Folk2	C3-12G	1
+
+	dialog	Folk2		……まあ、ドラゴンはいいとして、	最近この界隈をうろついている、	謎の人影のことをご存知ですか？
+	dialog	FolkGirl	謎の火トカゲ？
+	dialog	Folk2		目下のところ、ドラゴンよりも	ソイツのほうが私は気になりますねえ。
+	dialog	FolkGirl	謎の火トカゲって……	どらごんのことでしょ？
+	dialog	Folk2		えっ？
+	dialog	FolkGirl	えっ？
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人２×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-12H-0]
+Begin
+	target		Folk2
+	target		WaterSpirit
+	condition	Hero	vs_dragon	1
+	condition	Folk2	C3-12H	0
+
+	dialog	Folk2		!?
+	dialog	Folk2		またです！　先日から感じる、	この水のような冷たい気配……。
+	dialog	Folk2		なんなんだろう、いったい。
+	dialog	WaterSpirit	ぽ！　だいぶシンクロできてきたぽ。
+	dialog	Folk2		でも、ここにいるのは私一人……。
+	dialog	Folk2		やっぱり呪われたかなあ。	今度村のおねえさんに聞いてみよう……。
+	dialog	WaterSpirit	コイツにはもうすぐボクの	姿が見えるかもしれないっぽ。
+
+	set	Folk2	C3-12H	1
+End
+[C3-12H-1]
+Begin
+	target		Folk2
+	target		WaterSpirit
+	condition	Hero	vs_dragon	1
+	condition	Folk2	C3-12H	1
+
+	dialog	Folk2		まただ。頬のあたりを……	コンニャクが触ったような感覚が……。
+	dialog	WaterSpirit	おい！　ボクの両手をコンニャクと	表現した不届きものはオマエが初めてだぽ！
+	dialog	Folk2		ひゃー！	なんか見えないコンニャクで	ペタペタされるー。何なんだー！
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人２×ロングホーンドラゴン
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-12I-0]
+Begin
+	target		Folk2
+	target		Dragon
+	condition	Hero	vs_dragon	1
+
+	dialog	Folk2	これ……が……	ドラゴンん!?
+	dialog	Dragon	ぎゃああす！！（慨）
+	dialog	Folk2	思ったよりもデカい……	ひゃあああ！
+	text			村の若者は、逃げ出した！
+
+	move	Folk2	InitialPlace_Folk2	1.0
+
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女性×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-14G-0]
+Begin
+	target		FolkWoman
+	target		FolkGirl
+	condition	Hero	vs_dragon	1
+	condition	FolkWoman	C3-14G	0
+
+	dialog	FolkGirl	どらごん、	なんか凄そうななまえだよね！
+	dialog	FolkWoman	ええ、でもこの地方のドラゴンは、	ドラゴンというよりも火トカゲの	仲間に近いそうよ。
+	dialog	FolkGirl	人影……。
+	dialog	FolkWoman	火トカゲは、炎腺という	特殊な機関から炎の息を吐き出すと	いわれています。
+	dialog	FolkGirl	炎の息を吐き出す……	人影……。
+	dialog	FolkGirl	なにそれこわい。
+	dialog	FolkGirl	……どうして、炎を吐く人影に	なっちゃうのかなぁ？
+	dialog	FolkWoman	えっ？
+	dialog	FolkGirl	えっ？
+	dialog	FolkWoman	火トカゲの話よね？
+	dialog	FolkGirl	うん。人影の話。
+
+	set	FolkWoman	C3-14G	1
+End
+[C3-14G-1]
+Begin
+	target		FolkWoman
+	target		FolkGirl
+	condition	Hero	vs_dragon	1
+	condition	FolkWoman	C3-14G	1
+
+	dialog	FolkGirl	（今回ばかりは、お姉さんの	言っていることが良く解らなかったなあ。）
+	dialog	FolkGirl	勇者さま、炎を吐く人影相手に	どう戦うんだろう……。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女性×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-14H-0]
+Begin
+	target		FolkWoman
+	target		WaterSpirit
+	condition	Hero		vs_dragon	1
+	condition	FolkWoman	C3-14H	0
+
+	dialog	FolkWoman	あら、また……。
+	dialog	FolkWoman	最近、身近に感じるこの気配……。
+	dialog	FolkWoman	邪悪なものには感じられませんわね。
+	dialog	WaterSpirit	ぽ！　ついにボクの姿が	見えるようになるのかぽ？
+	dialog	FolkWoman	あなたは、心霊……	いや、精霊さんなのですか？
+	dialog	FolkWoman	それとも、私たちを	守護してくれる、守護霊かなにか？
+	dialog	WaterSpirit	シンクロできたっぽ！	聞こえるかぽ？	ボクは泉の精だっぽ。
+	dialog	WaterSpirit	泉に育まれ、泉に生きる、	聖なる水の化身だっぽ。
+	dialog	FolkWoman	……ぽっぽぽっぽ聞こえます。	ハトの霊か何かなのでしょうか……	動物霊？
+	dialog	WaterSpirit	おーい！
+
+	set	FolkWoman	C3-14H	1
+End
+[C3-14H-1]
+Begin
+	target		FolkWoman
+	target		WaterSpirit
+	condition	Hero		vs_dragon	1
+	condition	FolkWoman	C3-14H	1
+
+	dialog	FolkWoman	また聞こえなくなってしまいました。	でも、次が楽しみですわ。ハトの幽霊さん。
+	dialog	WaterSpirit	……ハトって……ぽ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女性×ロングホーンドラゴン
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-14I-0]
+Begin
+	target		FolkWoman
+	target		Dragon
+	condition	Hero	vs_dragon	1
+
+	dialog	FolkWoman	きゃああっ！	ど、ドラゴン？！
+	text				村の女は、逃げ出した！
+	text				しかし、まわりこまれてしまった！
+	dialog	Dragon		ぎゃああす！！（余）
+	dialog	FolkWoman	いつもいつも……	素直に見逃しやがれ！
+	text				村の女は、逃げ出した！
+
+	move	FolkWoman	InitialPlace_FolkWoman	1.0
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女の子×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-16H-0]
+Begin
+	target		FolkGirl
+	target		WaterSpirit
+	condition	Hero		vs_dragon	1
+	condition	FolkGirl	C3-16H	0
+
+	dialog	WaterSpirit	あ、女の子ちゃんぽ。
+	dialog	FolkGirl	こんにちは！
+	dialog	WaterSpirit	また遊びに来てくれたぽ？
+	dialog	FolkGirl	うん。きょうは昔のお話を聞かせてー。
+	dialog	WaterSpirit	いいぽ。
+	dialog	WaterSpirit	これは、ボクが生まれたばかりのときに	お祖父ちゃんに聞いたお話だっぽ。
+	dialog	FolkGirl	うんうん。
+	dialog	WaterSpirit	お祖父ちゃんは、山へ芝刈りにいったぽ……
+
+	text				泉の精さんには恐縮ですが、略させて頂きます。
+
+	dialog	WaterSpirit	……というわけで、火吹き山の大魔道士に	召還されたお祖父ちゃんは……。
+	dialog	WaterSpirit	インターナルドグマに降りてきた	大型のヒトガタと対峙して	人類の無意識的集合体である……。
+	dialog	WaterSpirit	深層潜在的悪意を利用した	極大魔法を使って悪鬼ベルーゼ・バーブーを	封印することに成功したんだぽ！
+	dialog	WaterSpirit	……って、あれ、もしもーし？
+	dialog	WaterSpirit	寝ちゃったぽ。かわいい寝顔だぽ……。
+
+	set	FolkGirl	C3-16H	1
+End
+[C3-16H-1]
+Begin
+	target		FolkGirl
+	target		WaterSpirit
+	condition	Hero		vs_dragon	1
+	condition	FolkGirl	C3-16H	1
+
+
+	dialog	WaterSpirit	この子にお話しするには、ちょっと	スペクタクルさに欠けたのかぽ……。
+	dialog	WaterSpirit	今度からはもう少しライトなお話にするぽ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女の子×ロングホーンドラゴン
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-14I-0]
+Begin
+	target		FolkGirl
+	target		Dragon
+	condition	Hero	vs_dragon	1
+
+	dialog	FolkGirl	これが……これがドラゴン!?	こわっ！
+	dialog	Dragon		ぎゃああす！！（驚）
+	text				女の子は、逃げ出した！
+
+	move	FolkGirl	InitialPlace_FolkGirl	1.0
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 泉の精×ロングホーンドラゴン
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-18I-0]
+Begin
+	target		WaterSpirit
+	target		Dragon
+	condition	Hero	vs_dragon	1
+	condition	WaterSpirit	C3-18I	0
+
+	dialog	Dragon		ぎゃ？
+	dialog	WaterSpirit	ぽぽっと！
+	dialog	WaterSpirit	ボクの天敵の登場だぽ。
+	dialog	WaterSpirit	まともにブレスを食らうと、	如何にボクが高尚な精霊だろうと、	一発で蒸発しちゃうぽ。
+	dialog	WaterSpirit	ここは、気づかれないように	退散するのが吉ぽ。
+
+	set	WaterSpirit	C3-18I	1
+End
+[C3-18I-1]
+Begin
+	target		WaterSpirit
+	target		Dragon
+	condition	Hero	vs_dragon	1
+	condition	WaterSpirit	C3-18I	1
+
+	dialog	Dragon		ぎゃああす！！（識）
+	dialog	WaterSpirit	ぽ！　なぜか気づかれたぽ！	ぽぽぽぽぽっ！
+	dialog	Dragon		ぎゃああす！！（炎）
+	dialog	WaterSpirit	ぽぽぽぽっ！	熱っ、熱っ、熱っぽ！
+	dialog	WaterSpirit	はぁ、はぁ……	す、すさまじいブレスっぽ。
+	dialog	WaterSpirit	体温が瞬間的に100度を超えたっぽ……。
+
+End

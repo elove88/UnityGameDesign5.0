@@ -1,0 +1,478 @@
+﻿;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 第一章　勇者以外のイベント
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 長老×村人１
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-7D-0]
+Begin
+	target		Elder
+	target		Folk1
+	condition	Hero	has_torch	0
+
+	dialog	Folk1		よお、長老さん。
+	dialog	Elder		おお、息災か。
+	dialog	Folk1		ウチの周りに住み着いた大バチのせいで、	俺は満足に家から出れねえ。
+	dialog	Folk1		今日だって、いちいちあたりを見渡して、	ようやく家から出れたんだ。
+	dialog	Folk2		それは大変ですねえ。
+	dialog	Elder		うーむ。難儀しておるな。
+	dialog	Folk1		あのハチとのハチ合わせだきゃ	勘弁してほしいからな、	なんつって！　がははは。
+	dialog	FolkWoman	……。
+	dialog	Elder		……本当に難儀しておるのか？
+End
+	[C1-7D-0-1]
+	Begin
+		target		Elder
+		target		Folk1
+		condition	Hero	has_torch	1
+	
+		call-event	C1-7D-0
+	End
+	[C1-7D-0-2]
+	Begin
+		target		Elder
+		target		Folk1
+		condition	Hero	has_torch	2
+	
+		call-event	C1-7D-0
+	End
+	;; 長老×村人２
+	[C1-7E-0-0]
+	Begin
+		target		Elder
+		target		Folk2
+		condition	Hero	has_torch	0
+	
+		call-event	C1-7D-0
+	End
+	[C1-7E-0-1]
+	Begin
+		target		Elder
+		target		Folk2
+		condition	Hero	has_torch	1
+	
+		call-event	C1-7D-0
+	End
+	[C1-7E-0-2]
+	Begin
+		target		Elder
+		target		Folk2
+		condition	Hero	has_torch	2
+	
+		call-event	C1-7D-0
+	End
+	;; 長老×女性
+	[C1-7F-0-0]
+	Begin
+		target		Elder
+		target		FolkWoman
+		condition	Hero	has_torch	0
+	
+		call-event	C1-7D-0
+	End
+	[C1-7F-0-1]
+	Begin
+		target		Elder
+		target		FolkWoman
+		condition	Hero	has_torch	1
+	
+		call-event	C1-7D-0
+	End
+	[C1-7F-0-2]
+	Begin
+		target		Elder
+		target		FolkWoman
+		condition	Hero	has_torch	2
+	
+		call-event	C1-7D-0
+	End
+	;; 長老×女の子
+	[C1-7G-0-0]
+	Begin
+		target		Elder
+		target		FolkGirl
+		condition	Hero	has_torch	0
+	
+		call-event	C1-7D-0
+	End
+	[C1-7G-0-1]
+	Begin
+		target		Elder
+		target		FolkGirl
+		condition	Hero	has_torch	1
+	
+		call-event	C1-7D-0
+	End
+	[C1-7G-0-2]
+	Begin
+		target		Elder
+		target		FolkGirl
+		condition	Hero	has_torch	2
+	
+		call-event	C1-7D-0
+	End
+[C1-8D-0]
+Begin
+	target		Elder
+	target		Folk1
+	condition	Hero	has_torch	3
+
+	dialog	Folk2		みなさん、聞きました？
+	dialog	Elder		なんじゃ。騒々しい。
+	dialog	Folk2		あの勇者さま、いよいよ	大バチに挑むらしいですよ！
+	dialog	Folk1		おう、件の松明でか。
+	dialog	FolkWoman	そうですわ。
+	dialog	Elder		うむ、これで厄介者の大バチを	追い払うことができるじゃろう。
+	dialog	Folk1		あの大バチ、ケムリにまかれて	捨てバチにならなきゃいいなあ、	なぁんてな！　がははは。
+	dialog	FolkWoman	……。
+End
+	;; 長老×村人２
+	[C1-8E-0]
+	Begin
+		target		Elder
+		target		Folk2
+		condition	Hero	has_torch	3
+	
+		call-event	C1-8D-0
+	End
+	;; 長老×女性
+	[C1-8F-0]
+	Begin
+		target		Elder
+		target		FolkWoman
+		condition	Hero	has_torch	3
+	
+		call-event	C1-8D-0
+	End
+	;; 長老×女の子
+	[C1-8G-0]
+	Begin
+		target		Elder
+		target		FolkGirl
+		condition	Hero	has_torch	3
+	
+		call-event	C1-8D-0
+	End
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 長老×キラービー
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-7H-0]
+Begin
+	target		Elder
+	target		KillerBee
+
+	dialog	Elder		しまった！	きゃつがこんなに近くに居るとは！
+	dialog	KillerBee	ぶーん(嘲）
+	dialog	Elder		ま、まずい、逃げなければ！
+	text	長老は、逃げ出した！
+
+	move	Elder	InitialPlace_Elder	1.0
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×村人２
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-9E-0]
+Begin
+	target		Folk1
+	target		Folk2
+	condition	Hero	has_torch	0
+
+	dialog	Folk2	勇者さま、いかがです？
+	dialog	Folk1	いんや、いろいろ甲斐甲斐しく	動いてはくれているようだが……
+	dialog	Folk1	今のところ進展はねえ。
+	dialog	Folk2	せいどうの鎧のせいですかねえ……。
+	dialog	Folk1	せいどうのせいどぇ、かぁ？	がははは。
+End
+	[C1-9E-0-1]
+	Begin
+		target		Folk1
+		target		Folk2
+		condition	Hero	has_torch	1
+	
+		call-event	C1-9E-0
+	End
+	[C1-9E-0-2]
+	Begin
+		target		Folk1
+		target		Folk2
+		condition	Hero	has_torch	2
+	
+		call-event	C1-9E-0
+	End
+
+[C1-10E-0]
+Begin
+	target		Folk1
+	target		Folk2
+	condition	Hero	has_torch	3
+
+	dialog	Folk2	そうそう、今日勇者さま見ました。
+	dialog	Folk2	何か、すっきりした	お顔をされてましたよ。
+	dialog	Folk1	お、そうか。何か進展が	あったのかも知れねえな。楽しみだ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×女性
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-9F-0]
+Begin
+	target		Folk1
+	target		FolkWoman
+	condition	Hero	has_torch	0
+
+	dialog	Folk1		勇者さんによ、ウチに巣食った	ばかでけえハチの退治をお願いしたんだわ。
+	dialog	FolkWoman	そうですか。お困りでしたものね。
+	dialog	Folk1		俺としちゃ、武運を祈らずには	いられねぇんだよな。
+	dialog	FolkWoman	武運？
+	dialog	Folk1		ハチだけに、ブーン長久…	なぁんつってな！！　がははは。
+	dialog	FolkWoman	……。
+End
+	[C1-9F-0-1]
+	Begin
+		target		Folk1
+		target		FolkWoman
+		condition	Hero	has_torch	1
+	
+		call-event	C1-9F-0
+	End
+	[C1-9F-0-2]
+	Begin
+		target		Folk1
+		target		FolkWoman
+		condition	Hero	has_torch	2
+	
+		call-event	C1-9F-0
+	End
+[C1-10F-0]
+Begin
+	target		Folk1
+	target		FolkWoman
+	condition	Hero	has_torch	3
+
+	dialog	FolkWoman	先ほど、勇者さまに松明を	作って差し上げたんですの。
+	dialog	Folk1		そうかい、おまえさんが……	ありがとよ。
+	dialog	Folk1		さぁて、あとはあの勇者さん次第、	ってわけだ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-9G-0]
+Begin
+	target		Folk1
+	target		FolkGirl
+	condition	Hero	has_torch	0
+
+	dialog	FolkGirl	あの大きいハチ、怖いよう……。
+	dialog	Folk1		近寄っちゃだめだぜ。
+	dialog	Folk1		きっと勇者さまが何とかしてくれるからよぉ。	もう少し、表で遊ぶのは控えたほうが	良さそうだぜ。な。
+End
+	[C1-9G-0-1]
+	Begin
+		target		Folk1
+		target		FolkGirl
+		condition	Hero	has_torch	1
+	
+		call-event	C1-9G-0
+	End
+	[C1-9G-0-2]
+	Begin
+		target		Folk1
+		target		FolkGirl
+		condition	Hero	has_torch	2
+	
+		call-event	C1-9G-0
+	End
+[C1-10G-0]
+Begin
+	target		Folk1
+	target		FolkGirl
+	condition	Hero	has_torch	3
+
+	dialog	FolkGirl	おじさん、どうしたの？
+	dialog	Folk1		おう、勇者さまがあの大バチを	追い払うことができるかもしれねえ、	って話を聞いたんだ。
+	dialog	FolkGirl	わぁ、楽しみだね！
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×キラービー
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-9H-0]
+Begin
+	target		Folk1
+	target		KillerBee
+
+	dialog	Folk1		やばっ！　ハチ合わせしちまった！
+	dialog	KillerBee	ぶーん！（激）
+	dialog	Folk1		こいつ……怒ってやがる！　うわよせやめろ！
+	text	村の男は、逃げ出した！
+
+	move	Folk1	InitialPlace_Folk1	1.0
+
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人２×女性
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-11F-0]
+Begin
+	target		Folk2
+	target		FolkWoman
+	condition	Hero	has_torch	0
+
+	dialog	Folk2		おばけバチを怖がっちゃって、	うちのウシのアンコが働いてくれなくて……。
+	dialog	FolkWoman	まあ……それにしても、	あのおばけバチ、困りますわね。
+	dialog	Folk2		せいどうの勇者さまー、	早く何とかしてくださいよう。
+End
+	[C1-11F-0-1]
+	Begin
+		target		Folk2
+		target		FolkWoman
+		condition	Hero	has_torch	1
+	
+		call-event	C1-11F-0
+	End
+	[C1-11F-0-2]
+	Begin
+		target		Folk2
+		target		FolkWoman
+		condition	Hero	has_torch	2
+	
+		call-event	C1-11F-0
+	End
+[C1-12F-0]
+Begin
+	target		Folk2
+	target		FolkWoman
+	condition	Hero	has_torch	3
+
+	dialog	FolkWoman	先ほど、勇者さまに松明を	作って差し上げたんですの。
+	dialog	Folk2		おお、貴女が作られたのですね。
+	dialog	Folk2		これで、あの大バチにも	引導が渡せそうですね。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人２×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-11G-0]
+Begin
+	target		Folk2
+	target		FolkGirl
+	condition	Hero	has_torch	0
+
+	dialog	FolkGirl	あの大きいハチ、怖いよう……。
+	dialog	Folk2		近寄っちゃだめですよ。
+	dialog	Folk2		きっと勇者さまが何とかしてくれます。	もう少しの間だけ、辛抱していてね。
+End
+	[C1-11G-0-1]
+	Begin
+		target		Folk2
+		target		FolkGirl
+		condition	Hero	has_torch	1
+	
+		call-event	C1-11G-0
+	End
+	[C1-11G-0-2]
+	Begin
+		target		Folk2
+		target		FolkGirl
+		condition	Hero	has_torch	2
+	
+		call-event	C1-11G-0
+	End
+[C1-12G-0]
+Begin
+	target		Folk2
+	target		FolkGirl
+	condition	Hero	has_torch	3
+
+	dialog	FolkGirl	お兄さん、どうしたの？
+	dialog	Folk2		勇者さまがあの大バチを追い払う	ことができるかもしれない、	って噂を耳にしたんです。
+	dialog	Folk2		わぁ、楽しみだね！
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人２×キラービー
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-11H-0]
+Begin
+	target		Folk2
+	target		KillerBee
+
+	dialog	Folk2		あなたの相手は私じゃないですよっ！
+	dialog	KillerBee	ぶーん！（笑）
+	dialog	Folk2		ひゃああぁ、お助けぇ……。
+	text	村の若者は、逃げだした！
+
+	move	Folk2	InitialPlace_Folk2	1.0
+
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女性×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-13G-0]
+Begin
+	target		FolkWoman
+	target		FolkGirl
+	condition	Hero	has_torch	0
+
+	dialog	FolkGirl	あの大きいハチ、怖いよう……。
+	dialog	FolkWoman	近寄っちゃだめですよ。
+	dialog	FolkWoman	きっと勇者さまが何とかしてくださるわ。	もう少しの辛抱よ。
+End
+	[C1-13G-0-1]
+	Begin
+		target		FolkWoman
+		target		FolkGirl
+		condition	Hero	has_torch	1
+	
+		call-event	C1-13G-0
+	End
+	[C1-13G-0-2]
+	Begin
+		target		FolkWoman
+		target		FolkGirl
+		condition	Hero	has_torch	2
+	
+		call-event	C1-13G-0
+	End
+[C1-13G-0]
+Begin
+	target		FolkWoman
+	target		FolkGirl
+	condition	Hero	has_torch	3
+
+	dialog	FolkGirl	お姉さん、どうしたの？
+	dialog	FolkWoman	あのね、勇者さまにあの大バチを	追い払う方法をお伝えしたの。	きっと上手くいきますわ。
+	dialog	FolkGirl	わぁ、楽しみだね！
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女性×キラービー
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-13H-0]
+Begin
+	target		FolkWoman
+	target		KillerBee
+
+	dialog	FolkWoman		ひっ！　おばけバチ！
+	text	村の女は、逃げ出した！
+	text	しかし、まわりこまれてしまった！
+	dialog	KillerBee		ぶーん！（感）
+	dialog	FolkWoman		こっ、このヤロ！　いい加減に……。
+	text	村の女は、逃げ出した！
+
+	move	FolkWoman	InitialPlace_FolkWoman	1.0
+
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女の子×キラービー
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-15H-0]
+Begin
+	target		FolkGirl
+	target		KillerBee
+
+	dialog	FolkGirl		ひゃあ！　出たあ！
+	dialog	KillerBee		ぶーん！（驚）
+	text	女の子は、逃げ出した！
+
+	move	FolkGirl	InitialPlace_FolkGirl	1.0
+
+End

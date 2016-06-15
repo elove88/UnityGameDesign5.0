@@ -1,0 +1,185 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 第三章　勇者のイベント
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; プロローグ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-2C-0]
+;;Begin
+;;	prologue
+;;	dialog	Folk2	おお、勇者どの、ありがとうございました。
+;;	dialog	Folk2	これで、ハナコも浮かばれるというものです。
+;;	dialog	Folk2	そもそも、あのような巨大なサソリなど、これまで見かけたこともありませんでした。
+;;	dialog	Folk2	森の奥で異変が起こり、それを逃れて村に降りてきたのだ、という者もいますが……。
+;;End
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×長老
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5C-0]
+Begin
+	target	Hero
+	target	Elder
+	condition	Hero	vs_dragon	0
+	condition	Hero	C1-5C	0
+
+	dialog	Elder	ほっほっ。また、ウチの村人の抱えるトラブルを解消してくれたそうじゃな、	感謝するぞい。
+	dialog	Elder	ところで……既に聞いたかもしれぬが、	森の奥で大きなツノを持つドラゴンが現れたらしいのじゃ。
+	dialog	Elder	ここ数十年、ドラゴンが現れたことなんぞ一度も無かったのじゃが……。	
+	dialog	Elder	また、そのドラゴンは何らかの宝物を守護している、という噂もある。
+	dialog	Elder	そうなると、気が立っていて厄介じゃろうな。どうにかならんもんかのう……。
+
+	set		Hero	C1-5C	1
+End
+[C1-5C-1]
+Begin
+	target	Hero
+	target	Elder
+	condition	Hero	vs_dragon	0
+	condition	Hero	C1-5C	1
+
+	dialog	Elder	宝物を守護する、いわゆるガーディアンと呼ばれるタイプのドラゴンは……
+	dialog	Elder	近寄るものを敵と認識し、誰彼かまわず攻撃を仕掛けるそうじゃ。
+	dialog	Elder	トレジャーハンター以外には、厄介な存在じゃ……。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×村人１
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5D-0]
+Begin
+	target		Hero
+	target		Folk1
+	condition	Hero	vs_dragon	0
+	condition	Hero	C1-5D	0
+
+	dialog	Folk1	おい、聞いたかい勇者さん。
+	dialog	Folk1	北西の森の奥深く、大きなツノをもったドラゴンが現れて、	付近の住民が困っているらしいぜ。
+
+	set		Hero	C1-5D	1
+End
+
+[C1-5D-1]
+Begin
+	target		Hero
+	target		Folk1
+	condition	Hero	vs_dragon	0
+	condition	Hero	C1-5D	1
+
+	dialog	Folk1	そんなに大きいツノ生やしてるなんて、よっぽどお怒りにちげえねえぜ。	おーこわ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×村人２
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5E-0]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	vs_dragon	0
+	condition	Hero	C1-5E	0
+
+	dialog	Folk2	野生動物だったら、天敵でも現れなければ、住処を出たりしないですよね。
+	dialog	Folk2	いったい、森の奥で何が起こっているのでしょうか……。
+
+	set		Hero	C1-5E	1
+End
+[C1-5E-1]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	vs_dragon	0
+	condition	Hero	C1-5E	1
+
+	dialog	Folk2	天敵……いや、もっと恐ろしいものが、	サソリを住処から追い出したのかもしれませんね。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×女性
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5F-0]
+Begin
+	target		Hero
+	target		FolkWoman
+	condition	Hero	vs_dragon	0
+	condition	Hero	C1-5F	0
+
+	dialog	FolkWoman	ドラゴンは、炎の息を吐くときに、	その長いツノで熱を逃がしていると聞きますわ。
+	dialog	FolkWoman	ツノを折ることができれば、さしものドラゴンも弱体化することでしょう。
+
+	set		Hero	C1-5F	1
+End
+[C1-5F-1]
+Begin
+	target		Hero
+	target		FolkWoman
+	condition	Hero	vs_dragon	0
+	condition	Hero	C1-5F	1
+
+	dialog	FolkWoman	いったい、どうやってドラゴンのあのカタい角を砕くことが	できるのでしょうか……。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5G-0]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	vs_dragon	0
+	condition	Hero	C1-5G	0
+
+	dialog	FolkGirl	こんにちは！
+	dialog	FolkGirl	オトコは黙って直球勝負！	カタいものを砕くには、もっとカタいものをぶつけるんだ！	当たって砕けろ、だ！　ってパパが言ってたよ。
+
+	set		Hero	C1-5G	1
+End
+[C1-5G-1]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	vs_dragon	0
+	condition	Hero	C1-5G	1
+
+	dialog	FolkGirl	当たって砕けたら負けちゃってるよね、っていうのは突っ込まないでおいたよ。	あたし、優しいでしょ！
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5H-0]
+Begin
+	target		Hero
+	target		WaterSpirit
+	condition	Hero	vs_dragon	0
+	condition	Hero	C1-5H	0
+
+	dialog	WaterSpirit	……遊びに来てくれたぽ？
+	dialog	WaterSpirit	あ、いや、何でも無いぽ。
+	dialog	WaterSpirit	……///
+	dialog	WaterSpirit	べ、別に寂しかったわけでもないし、	遊びに来てくれたって勘違いしたわけでもないぽ！
+	dialog	WaterSpirit	もうひとついうと、嬉しかったわけでもないぽ！
+
+	set		Hero	C1-5H	1
+End
+[C1-5H-1]
+Begin
+	target		Hero
+	target		WaterSpirit
+	condition	Hero	vs_dragon	0
+	condition	Hero	C1-5H	1
+
+	dialog	WaterSpirit	で、本当は遊びにきたんでぽ？
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×ロングホーンドラゴン
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-6I-0]
+Begin
+	target		Hero
+	target		Dragon
+	condition	Hero	vs_dragon	1
+
+	dialog	Dragon	ぎゃああす！！（怒）
+	text	(←戦闘開始)
+	text	ロングホーンドラゴンは、激しい炎を吐いた！
+	text	業炎が勇者の身体を焼き尽くす！
+	text	勇者は倒れてしまった……。
+End

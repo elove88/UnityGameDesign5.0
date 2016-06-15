@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{4DC8D753-716C-9405-E735-F71D3B1B2B9B}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_0_0;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_WEBPLAYER;ENABLE_SUBSTANCE;WEBPLUG;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Scripts\AudioBreaker.cs" />
+     <Compile Include="Assets\Scripts\AudioMaker.cs" />
+     <Compile Include="Assets\Scripts\BattleSpaceController.cs" />
+     <Compile Include="Assets\Scripts\BossController.cs" />
+     <Compile Include="Assets\Scripts\BulletMaker.cs" />
+     <Compile Include="Assets\Scripts\ClickToGameStart.cs" />
+     <Compile Include="Assets\Scripts\ClickToOpening.cs" />
+     <Compile Include="Assets\Scripts\CoreController.cs" />
+     <Compile Include="Assets\Scripts\DebugToolStopMotion.cs" />
+     <Compile Include="Assets\Scripts\DebugTools.cs" />
+     <Compile Include="Assets\Scripts\EffectBomb.cs" />
+     <Compile Include="Assets\Scripts\EffectDamage.cs" />
+     <Compile Include="Assets\Scripts\EndingScrollController.cs" />
+     <Compile Include="Assets\Scripts\EndingSideScrollController.cs" />
+     <Compile Include="Assets\Scripts\EnemyMaker.cs" />
+     <Compile Include="Assets\Scripts\EnemyStatus.cs" />
+     <Compile Include="Assets\Scripts\EnemyStatusBoss.cs" />
+     <Compile Include="Assets\Scripts\EnemyStatusType03Leader.cs" />
+     <Compile Include="Assets\Scripts\EnemyType01ChildController.cs" />
+     <Compile Include="Assets\Scripts\EnemyType01Controller.cs" />
+     <Compile Include="Assets\Scripts\EnemyType02ChildController.cs" />
+     <Compile Include="Assets\Scripts\EnemyType02Controller.cs" />
+     <Compile Include="Assets\Scripts\EnemyType03ChildController.cs" />
+     <Compile Include="Assets\Scripts\EnemyType03Controller.cs" />
+     <Compile Include="Assets\Scripts\EnemyType03LeaderController.cs" />
+     <Compile Include="Assets\Scripts\EnemyType04Controller.cs" />
+     <Compile Include="Assets\Scripts\EngineUnitController.cs" />
+     <Compile Include="Assets\Scripts\FadeIn.cs" />
+     <Compile Include="Assets\Scripts\FadeOut.cs" />
+     <Compile Include="Assets\Scripts\GameOver.cs" />
+     <Compile Include="Assets\Scripts\GlobalParam.cs" />
+     <Compile Include="Assets\Scripts\LaserController.cs" />
+     <Compile Include="Assets\Scripts\LaserMaker.cs" />
+     <Compile Include="Assets\Scripts\LockBonus.cs" />
+     <Compile Include="Assets\Scripts\LockSlot.cs" />
+     <Compile Include="Assets\Scripts\LockonLaserMotion.cs" />
+     <Compile Include="Assets\Scripts\LockonSightController.cs" />
+     <Compile Include="Assets\Scripts\OpeningInformationBoardController.cs" />
+     <Compile Include="Assets\Scripts\OpeningSpaceController.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerShotController.cs" />
+     <Compile Include="Assets\Scripts\PlayerShotMaker.cs" />
+     <Compile Include="Assets\Scripts\PlayerStatus.cs" />
+     <Compile Include="Assets\Scripts\PrintHiScore.cs" />
+     <Compile Include="Assets\Scripts\PrintMessage.cs" />
+     <Compile Include="Assets\Scripts\PrintScore.cs" />
+     <Compile Include="Assets\Scripts\RKeyPressToOpening.cs" />
+     <Compile Include="Assets\Scripts\ScoutingLaser.cs" />
+     <Compile Include="Assets\Scripts\ScoutingLaserMeshController.cs" />
+     <Compile Include="Assets\Scripts\ShotController.cs" />
+     <Compile Include="Assets\Scripts\ShotMaker.cs" />
+     <Compile Include="Assets\Scripts\StageController.cs" />
+     <Compile Include="Assets\Scripts\StarController.cs" />
+     <Compile Include="Assets\Scripts\StoneController.cs" />
+     <Compile Include="Assets\Scripts\VulcanController.cs" />
+     <None Include="Assets\Characters\Import\Materials\NormalSpecularMap_VC.shader" />
+     <None Include="Assets\Characters\Import\Materials\NormalMap_VC.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

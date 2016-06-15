@@ -1,0 +1,341 @@
+﻿;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 第一章　勇者のイベント
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; プロローグ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-00]
+Begin
+	prologue
+	fadein	1.0
+
+	dialog	Folk1		うおっ、まーた現れやがったな！
+
+	play	rpg_system06
+	show	KillerBee
+
+	dialog	KillerBee	ぶーん(警）
+	dialog	Folk1		まいったな……こいつ、	さいきんよく現れやがる……。
+	dialog	Folk1		まさか、こんなところに巣でも	作るつもりじゃあるまいなぁ。
+	dialog	KillerBee	ぶーん(嘲）
+	dialog	Folk1		おいおい、勘弁してくれよ……。
+
+End
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×長老
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-3C-0]
+Begin
+	target	Hero
+	target	Elder
+	condition	Hero	C1-3C	0
+
+	dialog	Elder	ん、どうした？ワシに用かな？
+	dialog	Elder	そうじゃな、この村のことについて	少し話そうかの。
+	dialog	Elder	この村は、旧世紀の大魔法大戦が	終結したと曰くのある土地での。
+	dialog	Elder	偉大なる大魔道士さまが、大魔王を	封じた伝説の地なのじゃ。
+
+	set		Hero	C1-3C	1
+End
+
+[C1-3C-1]
+Begin
+	target		Hero
+	target		Elder
+	condition	Hero	C1-3C	1
+
+	dialog	Elder	はて、それで何じゃったか…えーと。ほら。
+	dialog	Elder	まあ、また聞きにくるがええ。
+
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×村人１
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-3D-0]
+Begin
+	target		Hero
+	target		Folk1
+	condition	Hero	C1-3D	0
+
+	dialog	Folk1	さいきん、馬鹿でけえハチが	家の周りをブンブン飛んでやがる。
+	dialog	Folk1	巣でも作られたらたまらねえ。	なんとかしてくれ！
+
+	set		Hero	C1-3D	1
+End
+
+[C1-3D-1]
+Begin
+	target		Hero
+	target		Folk1
+	condition	Hero	C1-3D	1
+
+	dialog	Folk1	頼むよ。このままじゃ安心して	家を出られねえ。
+	dialog	Folk1	あの大バチをなんとかしてくれ！
+
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×村人２
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-3E-0]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	has_torch	0
+
+	dialog	Folk2	古今、ムシの苦手なものといえば、火と煙です。
+	dialog	Folk2	東の森には、堅いわりに良く燃えるという、	薪にうってつけの木が生えているそうです。
+
+	set			Hero	has_torch	1		;; ←木材出現
+End
+[C1-4E-0]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	has_torch	1
+
+	dialog	Folk2	古今、ムシの苦手なものといえば、火と煙です。
+	dialog	Folk2	東の森には、堅いわりに良く燃えるという、	薪にうってつけの木が生えているそうです。
+
+	;;set			Hero	has_torch	1		;; ←木材出現
+End
+
+[C1-5E-0]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	has_torch	2
+	condition	Hero	C1-5E		0
+
+	dialog	Folk2	おお、その木材は！	東の森から取ってきたものですね。
+
+	set		Hero	C1-5E		1
+End
+
+[C1-5E-1]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	has_torch	2
+	condition	Hero	C1-5E		1
+
+	dialog	Folk2	すみません、どうやって松明を作るか	までは私の専門外でして……。
+End
+
+[C1-6E-0]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	has_torch	3
+
+	dialog	Folk2	いい松明を手に入れましたね！	これは期待できますよ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×女性
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-3F-0]
+Begin
+	target		Hero
+	target		FolkWoman
+	condition	Hero	has_torch	0
+
+	dialog	FolkWoman	殺人バチと呼ばれる種類の大バチは、	火と煙がたいそう苦手と聞きます。
+End
+	;; 勇者×女性
+	[C1-3F-0-1]
+	Begin
+		target		Hero
+		target		FolkWoman
+		condition	Hero	has_torch	1
+	
+		call-event	C1-3F-0
+	End
+
+[C1-4F-0]
+Begin
+	target		Hero
+	target		FolkWoman
+	condition	Hero	has_torch	2
+
+	dialog	FolkWoman	その木材は……	まさに、松明にうってつけですわ。
+	dialog	FolkWoman	木材の先に灯油を染み込ませた布を巻いて……	ホラ、立派な松明の完成ですわ。
+
+	set		Hero	has_torch	3  	;; ←松明入手
+	play		rpg_system13
+
+	text		勇者は、松明を手に入れた！
+End
+
+[C1-5F-0]
+Begin
+	target		Hero
+	target		FolkWoman
+	condition	Hero	has_torch	3
+
+	dialog	FolkWoman	その松明なら大バチを追い払う	こともできましょう。
+	dialog	FolkWoman	お願いいたしますわ、勇者さま。
+End
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-3G-0]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	has_torch	0
+
+	dialog	FolkGirl	こんにちわ！
+	dialog	FolkGirl	ひとの言うことは良く聞きなさい、	ってパパが言ってたよ。
+	dialog	FolkGirl	またね～。
+End
+	;; 勇者×女の子
+	[C1-3G-0-1]
+	Begin
+		target		Hero
+		target		FolkGirl
+		condition	Hero	has_torch	1
+	
+		call-event	C1-3G-0
+	End
+
+[C1-4G-0]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	has_torch	2
+
+	dialog	FolkGirl	勇者さま、木の棒を持って、どこ行くの？
+	dialog	FolkGirl	……大事なこと思い出しちゃった！
+	dialog	FolkGirl	村のお姉さんが、木の棒が	どうこう言ってた気がする！
+End
+
+[C1-5G-0]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	has_torch	3
+
+	dialog	FolkGirl	あ！　松明を手に入れたんだね！	今ならあのムシにも勝てるかもね！
+End
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×キラービー
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-3H-0]
+Begin
+	target		Hero
+	target		KillerBee
+	condition	Hero	has_torch	0
+	condition	Hero	C1-3H		0
+
+	dialog	KillerBee	ぶーん(怒）
+	text		キラービーは威嚇している。これでは近寄れない！
+
+	move	Hero	InitialPlace_Hero	0.5
+	set		Hero	C1-3H	1
+End
+
+[C1-3H-1]
+Begin
+	target		Hero
+	target		KillerBee
+	condition	Hero	has_torch	0
+	condition	Hero	C1-3H		1
+
+	text		キラービーはいきり立って襲い掛かり、毒針を突き立てた！
+	text		勇者は倒れてしまった……。
+	move	Hero	InitialPlace_Hero	0.5
+End
+
+	[C1-4H-0]
+	Begin
+		target		Hero
+		target		KillerBee
+		condition	Hero	has_torch	1
+		condition	Hero	C1-3H		0
+	
+		call-event	C1-3H-0
+	End
+	[C1-4H-1]
+	Begin
+		target		Hero
+		target		KillerBee
+		condition	Hero	has_torch	1
+		condition	Hero	C1-3H		1
+	
+		call-event	C1-3H-1
+	End
+
+	[C1-5H-0]
+	Begin
+		target		Hero
+		target		KillerBee
+		condition	Hero	has_torch	2
+		condition	Hero	C1-3H		0
+	
+		call-event	C1-3H-0
+	End
+	[C1-5H-1]
+	Begin
+		target		Hero
+		target		KillerBee
+		condition	Hero	has_torch	2
+		condition	Hero	C1-3H		1
+	
+		call-event	C1-3H-1
+	End
+
+[C1-5H-0]
+Begin
+	target		Hero
+	target		KillerBee
+	condition	Hero	has_torch	3
+
+	dialog	KillerBee	ぶーん(涙目）
+	text		松明の炎と煙で、キラービーの動きが鈍ってきた！
+
+	message		Hero	battle	KillerBee
+
+	play		rpg_system05
+	hide		KillerBee
+
+	text		勇者は、キラービーを倒した！
+
+	fadeout		1.0
+	text		第一章　終
+
+	load		Events/c02_main.txt	Events/c02_sub.txt	;; 第二章のスクリプトへ
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×東の木１
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5H-0]
+Begin
+	target		Hero
+	target		M16_Tree1
+	condition	Hero	has_torch	1
+
+	text		勇者は、足元を調べた！
+	text		なんと、木材を発見した！
+	text		しかし、ポッキリと折れてしまった！
+
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×東の木１
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5H-0]
+Begin
+	target		Hero
+	target		M16_Tree2
+	condition	Hero	has_torch	1
+
+	text		勇者は、足元を調べた！
+	text		なんと、立派な木材を発見した！
+
+	play		rpg_system08
+	text		勇者は、立派な木材を手に入れた！
+
+	set			Hero	has_torch	2	;; ←木材入手
+End

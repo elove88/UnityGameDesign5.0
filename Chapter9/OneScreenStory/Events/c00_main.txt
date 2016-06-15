@@ -1,0 +1,161 @@
+﻿;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; プロローグ　勇者のイベント
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; プロローグ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C0-2C]
+Begin
+	prologue
+	fadein	1.0
+	dialog	Elder	よくぞこの地を訪れてくれた。	勇者どの。
+	dialog	Elder	感じるのじゃ。	この地に漲りつつある、闇の気配を。
+	dialog	Elder	何が起ころうとしておるのか、	今はわからん。
+	dialog	Elder	村にも、変化を感じている者がおる。	話を聞いてやってもらえぬか。
+End
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×長老
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C0-5C-0]
+Begin
+	target	Hero
+	target	Elder
+
+	condition	Hero	C0-5C	0
+
+	dialog	Elder	まずは、情報収集から	はじめてもらいたいのじゃ。
+	dialog	Elder	頼みますぞ、勇者どの。
+
+	set		Hero	C0-5C	1
+End
+
+[C0-5C-1]
+Begin
+	target		Hero
+	target		Elder
+	condition	Hero	C0-5C	1
+
+	dialog	Elder	さて、準備はよろしいかの？
+
+	choice	Hero	C0-Hero-is_ready	はい	いいえ	
+	continue
+End
+
+[C0-5C-2]
+Begin
+	target		Hero
+	target		Elder
+	condition	Hero	C0-Hero-is_ready	1
+	condition	Hero	C0-5C	1
+
+	set		Hero	C0-5C	2
+
+	fadeout	1.0
+	text	プロローグ　終
+	load	Events/c01_main.txt	Events/c01_sub.txt	;; 第一章のスクリプトへ
+End
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×村人１
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C0-5D-0]
+Begin
+	target		Hero
+	target		Folk1
+	condition	Hero	C0-5D	0
+
+	dialog	Folk1	お、あんたが噂の勇者だな。
+	dialog	Folk1	ここは小つ国（おのつくに）	ってんだ。
+	dialog	Folk1	まあ、よろしくな。
+
+	set		Hero	C0-5D	1
+End
+
+[C0-5D-1]
+Begin
+	target		Hero
+	target		Folk1
+	condition	Hero	C0-5D	1
+
+	dialog	Folk1	ここからずっと東には	国王の住まう首都があるんだが……
+	dialog	Folk1	この村は随分と外れの片田舎だ。
+	dialog	Folk1	暇しちゃうかもしれねえなあ。
+
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×村人２
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C0-5E-0]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	C0-5E	0
+
+	dialog	Folk2	やあ、こんにちは。勇者さま。
+	dialog	Folk2	国王がわざわざあなたを派遣したのは、	何か重大な意味がありそうですね。
+	dialog	Folk2	これから何か起こるのでしょうか……。
+
+	set		Hero	C0-5E	1
+End
+
+[C0-5E-1]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	C0-5E	1
+
+	dialog	Folk2	それにしても……
+	dialog	Folk2	勇者さまってのはみなさんそういう	せいどうの鎧をきてらっしゃるんですか？
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×女性
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C0-5F-0]
+Begin
+	target		Hero
+	target		FolkWoman
+	condition	Hero	C0-5F	0
+
+	dialog	FolkWoman	勇者さま、はじめまして。
+	dialog	FolkWoman	この村はとても小さな村です。	でも村に伝わる「いにしえの予言の書」では……
+	dialog	FolkWoman	新しい伝説の始まる場所、	といわれています。
+
+	set		Hero	C0-5F	1
+End
+[C0-5F-1]
+Begin
+	target		Hero
+	target		FolkWoman
+	condition	Hero	C0-5F	1
+
+	dialog	FolkWoman	いにしえの予言の書……
+	dialog	FolkWoman	古き言い伝えの息づく地ですわ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C0-5G-0]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	C0-5G	0
+
+	dialog	FolkGirl	こんにちわ！
+	dialog	FolkGirl	困ったことがあったら、	話しかけてね！
+
+	set		Hero	C0-5G	1
+End
+[C0-5G-1]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	C0-5G	1
+
+	dialog	FolkGirl	村人に話しかけると、	一回目と二回目で内容が変わる	場合がある……ってパパが言ってたよ。
+	dialog	FolkGirl	どういう意味なのかが	良く解らないけど……。
+End
+
+

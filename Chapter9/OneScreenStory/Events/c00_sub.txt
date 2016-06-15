@@ -1,0 +1,204 @@
+﻿;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; プロローグ　勇者以外のイベント
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 長老×村人１
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C0-6D-0]
+Begin
+	target		Elder
+	target		Folk1
+	condition	Elder	C0-6D	0
+
+	dialog	Elder		あー、聞いてくれ皆の衆。	今度村に来た勇者どののことじゃが……
+	dialog	Folk1		へい。
+	dialog	Elder		何か変わったことがあったら、	どんな些細なことでも構わん。
+	dialog	Elder		逐一勇者どのにお話しするように！
+	dialog	FolkGirl	どんなことでも？
+	dialog	Elder		些細なことでもかまわんぞい。
+	dialog	Folk2		ところで、あの勇者大丈夫かなあ。
+	dialog	FolkWoman	何がですか？
+	dialog	Folk2		いや、彼の着てる鎧、	せいどうの鎧じゃないかなあ……。
+	dialog	Folk1		なーに気にしてんだか。
+	dialog	Elder		おほん！　えー、どんな勇者だって、	最初はかわの鎧から始まるものじゃ。
+	dialog	Elder		というわけじゃ。解散！
+
+	text	村人たち「うーい」
+
+	set		Elder	C0-6D	1
+End
+[C0-6D-1]
+Begin
+	target		Elder
+	target		Folk1
+	condition	Elder	C0-6D	1
+
+	dialog	Elder	あまり、見た目で判断しないように！
+	dialog	Folk1	うーい。
+End
+
+	;; 長老×村人２
+	[C0-6E-0]
+	Begin
+		target		Elder
+		target		Folk2
+		condition	Elder	C0-6D	0
+	
+		call-event	C0-6D-0
+	End
+	[C0-6E-1]
+	Begin
+		target		Elder
+		target		Folk2
+		condition	Elder	C0-6D	1
+	
+		call-event	C0-6D-1
+	End
+	;; 長老×女性
+	[C0-6F-0]
+	Begin
+		target		Elder
+		target		FolkWoman
+		condition	Elder	C0-6D	0
+	
+		call-event	C0-6D-0
+	End
+	[C0-6F-1]
+	Begin
+		target		Elder
+		target		FolkWoman
+		condition	Elder	C0-6D	1
+	
+		call-event	C0-6D-1
+	End
+	;; 長老×女の子
+	[C0-6G-0]
+	Begin
+		target		Elder
+		target		FolkGirl
+		condition	Elder	C0-6D	0
+	
+		call-event	C0-6D-0
+	End
+	[C0-6G-1]
+	Begin
+		target		Elder
+		target		FolkGirl
+		condition	Elder	C0-6D	1
+	
+		call-event	C0-6D-1
+	End
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×村人２
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C0-7E-0]
+Begin
+	target		Folk1
+	target		Folk2
+	condition	Folk1	C0-7E	0
+
+	dialog	Folk1	見た？　今度来た勇者さん。
+	dialog	Folk2	見ました。彼の着ている鎧、	結構安物っぽかったですね。
+	dialog	Folk1	そうなんだよ……	王国も予算不足ってところなのかね……。
+	dialog	Folk2	何しに来たのか知らないけど、	大丈夫かなあ……。
+
+	set		Folk1	C0-7E	1
+End
+[C0-7E-1]
+Begin
+	target		Folk1
+	target		Folk2
+	condition	Folk1	C0-7E	1
+
+	dialog	Folk2	不況ですねえ……。
+	dialog	Folk1	ぴーんときたぜ。
+	dialog	Folk1	恐怖の不況……ぷっ。
+
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×女性
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C0-7F-0]
+Begin
+	target		Folk1
+	target		FolkWoman
+	condition	Folk1	C0-7F	0
+
+	dialog	Folk1		よお、元気かい？
+	dialog	FolkWoman	あらごきげんよう。	今日も散歩に出かけられるのですか？
+	dialog	Folk1		ああ、さんぽ進んで二歩下がる	ってな、がははは。
+	dialog	FolkWoman	……。
+
+	set		Folk1	C0-7F	1
+End
+[C0-7F-1]
+Begin
+	target		Folk1
+	target		FolkWoman
+	condition	Folk1	C0-7F	1
+
+	dialog	Folk1		人生ってヤツは	そういうもんだ、なあ。
+	dialog	FolkWoman	え、ええまあ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C0-7G-0]
+Begin
+	target		Folk1
+	target		FolkGirl
+
+	dialog	FolkGirl	きゃっほー。
+	dialog	Folk1		いつもげんきだなぁ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人２×女性
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C0-8F-0]
+Begin
+	target		Folk2
+	target		FolkWoman
+	condition	Folk2	C0-8F	0
+
+	dialog	FolkWoman	おひさしぶりです。
+	dialog	Folk2		やあ、おひさしぶりです。
+	dialog	FolkWoman	いいお天気ですね。
+	dialog	Folk2		ええ。こんな日はウシのアンコに		おいしい牧草を食べさせてあげたくなります。
+
+	set		Folk2	C0-8F	1
+End
+[C0-8F-1]
+Begin
+	target		Folk2
+	target		FolkWoman
+	condition	Folk2	C0-8F	1
+
+	dialog	FolkWoman	アンコちゃんはお元気？
+	dialog	Folk2		ええ。おかげさまで。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人２×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C0-8G-0]
+Begin
+	target		Folk2
+	target		FolkGirl
+
+	dialog	FolkGirl	きゃっほー。
+	dialog	Folk2	いつもげんきですねぇ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女性×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C0-8G-0]
+Begin
+	target		FolkWoman
+	target		FolkGirl
+
+	dialog	FolkGirl	きゃっほー。
+	dialog	FolkWoman	今日もげんきですわね。
+End
+

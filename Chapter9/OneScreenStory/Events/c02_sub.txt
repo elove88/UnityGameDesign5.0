@@ -1,0 +1,617 @@
+﻿;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 第二章　勇者以外のイベント
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 長老×村人１
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-8D-0]
+Begin
+	target		Elder
+	target		Folk1
+	condition	Hero	vs_scorpion	0
+
+	dialog	Elder		というわけで、恒例の	井戸端会議が始まるわけじゃ。
+	dialog	Folk1		ウチの問題は片付いたけどよ、	今度もなかなかめんどくさそうじゃねえか。
+	dialog	Folk2		相手は猛毒のサソリですよ。	せいどうの鎧で守りきれるものじゃありません！
+	dialog	Folk1		どうやって、猛毒の攻撃を	凌ぎきるか、だな。
+	dialog	FolkWoman	何とか毒を無効化できない	ものでしょうか。
+	dialog	Elder		うーむ……。
+	dialog	Folk1		毒を無効化するのなんて、	むこう一年無理じゃねえか？	なーんつってな。がはははは。
+	dialog	FolkWoman	……（そろそろ来ると思ったｗ）
+End
+	;; 長老×村人２
+	[C2-8E-0]
+	Begin
+		target		Elder
+		target		Folk2
+		condition	Hero	vs_scorpion	0
+	
+		call-event	C2-8D-0
+	End
+	;; 長老×女性
+	[C2-8F-0]
+	Begin
+		target		Elder
+		target		FolkWoman
+		condition	Hero	vs_scorpion	0
+	
+		call-event	C2-8D-0
+	End
+	;; 長老×女の子
+	[C2-8G-0]
+	Begin
+		target		Elder
+		target		FolkGirl
+		condition	Hero	vs_scorpion	0
+	
+		call-event	C2-8D-0
+	End
+
+[C2-9D-0]
+Begin
+	target		Elder
+	target		Folk1
+	condition	Hero	vs_scorpion	1
+
+	dialog	Folk1		今回ばかりは、さすがの勇者さんも	大ピンチ、ちょっとやべえじゃねえか。
+	dialog	FolkGirl	勇者さま、猛毒で足元がフラフラしてたよ……	ぐす。
+	dialog	Elder		……かつて、大魔道士さまが猛毒に伏せられたとき、	なぞの精霊が大魔道士さまを救ったという。
+	dialog	Elder		その精霊の住まう泉というのが、	南西の泉ということじゃが……。
+	dialog	Elder		それ以降、その泉には強力な解毒作用が	あるともっぱらの噂なのじゃ。
+	dialog	FolkWoman	勇者さまの体力が、泉に辿り着くまで	持てばいいのですけど……。
+	dialog	Folk2		はぁなこぉぉぉぉ！
+End
+	;; 長老×村人２
+	[C2-9E-0]
+	Begin
+		target		Elder
+		target		Folk2
+		condition	Hero	vs_scorpion	1
+	
+		call-event	C2-9D-0
+	End
+	;; 長老×女性
+	[C2-9F-0]
+	Begin
+		target		Elder
+		target		FolkWoman
+		condition	Hero	vs_scorpion	1
+	
+		call-event	C2-9D-0
+	End
+	;; 長老×女の子
+	[C2-9G-0]
+	Begin
+		target		Elder
+		target		FolkGirl
+		condition	Hero	vs_scorpion	1
+	
+		call-event	C2-9D-0
+	End
+
+[C2-10D-0]
+Begin
+	target		Elder
+	target		Folk1
+	condition	Hero	vs_scorpion	2
+
+	dialog	Elder		みなの衆！　聞いたか。
+	dialog	Elder		なんと、勇者どの、復活じゃ！
+	text	みんな「おおおお！」
+	dialog	Folk1		俺は大丈夫だと思ってたけどな。
+	dialog	Folk2		もちろん私だって。絶対、絶対に	大丈夫だと確信しておりましたとも。
+	dialog	Folk1		なあ！
+	dialog	FolkWoman	オトコどもは調子のいいことを……。
+	dialog	FolkGirl	本当に良かった……勇者さま……。
+End
+	;; 長老×村人２
+	[C2-10E-0]
+	Begin
+		target		Elder
+		target		Folk2
+		condition	Hero	vs_scorpion	2
+	
+		call-event	C2-10D-0
+	End
+	;; 長老×女性
+	[C2-10F-0]
+	Begin
+		target		Elder
+		target		FolkWoman
+		condition	Hero	vs_scorpion	2
+	
+		call-event	C2-10D-0
+	End
+	;; 長老×女の子
+	[C2-10G-0]
+	Begin
+		target		Elder
+		target		FolkGirl
+		condition	Hero	vs_scorpion	2
+	
+		call-event	C2-10D-0
+	End
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 長老×ダイオウサソリ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-8H-0]
+Begin
+	target		Elder
+	target		KingScorpion
+
+	dialog	Elder			ぬう！　こんなところでこやつに	出会ってしまうとは！
+	dialog	KingScorpion	きしゃぁあああっ！（喜）
+	dialog	Elder			あ、あの毒針はヤバイ！　ひぃ！
+	text	長老は、逃げ出した！
+
+	move	Elder	InitialPlace_Elder	1.0
+
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 長老×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-10I-0]
+Begin
+	target		Elder
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	2
+
+	dialog	Elder	む、気配は感じるが、姿は見れぬ。
+	dialog	Elder	誰ぞおるのか？
+	dialog	Elder	……。
+	dialog	Elder	気のせいかの。
+
+	dialog	WaterSpirit	ほら、やっぱりぽ。
+	dialog	WaterSpirit	普通の人にはボクは見えないぽ。
+	dialog	WaterSpirit	そりゃあ、誰もボクの存在を	信じるわけは無いぽ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×村人２
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-11E-0]
+Begin
+	target		Folk1
+	target		Folk2
+	condition	Hero	vs_scorpion	0
+
+	dialog	Folk2	うううう、ハナコォ……。
+	dialog	Folk1	気の毒だがよぁ、泣いていてもはじまらねぇぜ……。
+	dialog	Folk2	うう、解っているのですが……。
+	dialog	Folk1	こういうときには、笑うんだ！	……そうだ、こんな話を知ってるか？
+	dialog	Folk1	ある一匹のネズミが、オオサソリの	家にディナーに招かれた。
+	dialog	Folk1	おっかなびっくりネズミがサソリの	家にやってくると、サソリの食卓には……。
+	dialog	Folk1	なんと、ヤツの毒でやられたエモノが	ご馳走として乗っていたんだと。
+	dialog	Folk1	それを見て、ネズミはこう思ったそうだ。	サソリのおサソリだけは絶対に受けちゃなんねえ、ってな！
+	dialog	Folk1	がはははは！
+	dialog	Folk2	……。
+	dialog	Folk2	……はぁ。
+	dialog	Folk1	がはは……はぁ。
+End
+	;; 村人１×村人２
+	[C1-12E-0]
+	Begin
+		target		Folk1
+		target		Folk2
+		condition	Hero	vs_scorpion	1
+	
+		call-event	C1-11E-0
+	End
+
+[C1-13E-0]
+Begin
+	target		Folk1
+	target		Folk2
+	condition	Hero	vs_scorpion	2
+
+	dialog	Folk2	……。
+	dialog	Folk1	おい、いいニュースだぜ。
+	dialog	Folk1	勇者さん、今度こそあのサソリを	やっつける気らしいぜ。
+	dialog	Folk2	どうせまた負けますよ。	だって、せいどうの鎧なんですから……。
+	dialog	Folk1	いやいやぁ、意気込みが	違うらしいぜぇ。
+	dialog	Folk1	なんでも、血清を打って、けっせんだ！　	って息巻いているらしいぜ！	がははは！
+	dialog	Folk2	……(なんか、だいぶ違うような気がする……）。
+
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×女性
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-11F-0]
+Begin
+	target		Folk1
+	target		FolkWoman
+	condition	Hero	vs_scorpion	0
+
+	dialog	Folk1		例のオバケサソリの一件で、	俺のダチが随分と落ち込んじまってよぉ。
+	dialog	FolkWoman	そうですか。おいたわしい。
+	dialog	Folk1		俺としちゃ、何とかしてやりたいんだが、	何をしてやればいいのかてんで解からねぇんだよ。
+	dialog	FolkWoman	彼の近くにいてあげてください。
+	dialog	FolkWoman	彼を勇気付け、力を与えて	あげられるのは、他でもない……。
+	dialog	Folk1		解った！　あんたれす！　だろ!?	やるなぁ。がはははは。
+	dialog	FolkWoman	……（あんたねえ）。
+End
+	;; 村人１×女性
+	[C1-12F-0]
+	Begin
+		target		Folk1
+		target		FolkWoman
+		condition	Hero	vs_scorpion	1
+	
+		call-event	C1-11F-0
+	End
+
+[C1-13F-0]
+Begin
+	target		Folk1
+	target		FolkWoman
+	condition	Hero	vs_scorpion	2
+
+	dialog	FolkWoman	勇者さまをご覧になりました？
+	dialog	Folk1		ああ、見た見た。	随分と元気そうだったな。
+	dialog	FolkWoman	私、感じるんです。勇者さまはなにか	霊的な存在に護られていることを。
+	dialog	Folk1		霊？　お化けとかかぁ？
+	dialog	FolkWoman	いえ、もっと精霊のような	高尚な何者かに……。
+	dialog	Folk1		その精霊は、	見目麗しい女タイプだな！
+	dialog	FolkWoman	……どうして解るんですか？
+	dialog	Folk1		そりゃおめぇ、せいれい潔白な美女	っていうじゃねえか。がははは！
+	dialog	FolkWoman	……（苦しい、その上、間違ってる）……。
+
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-11G-0]
+Begin
+	target		Folk1
+	target		FolkGirl
+	condition	Hero	vs_scorpion	0
+
+	dialog	FolkGirl	勇者さま、無事にオバケサソリを	退治できるのかな。
+	dialog	Folk1		ここはひとつ、勇者さんを	信じて待とうじゃないか。
+	dialog	FolkGirl	がんばれ勇者さま。ハラハラ……。
+End
+	;; 村人１×女の子
+	[C1-12G-0]
+	Begin
+		target		Folk1
+		target		FolkGirl
+		condition	Hero	vs_scorpion	1
+	
+		call-event	C1-11G-0
+	End
+
+[C1-13G-0]
+Begin
+	target		Folk1
+	target		FolkGirl
+	condition	Hero	vs_scorpion	2
+
+	dialog	FolkGirl	あのね！	さっき勇者さまを見かけたの！	なんか、前と顔つきが変わってて、びっくりしたの！
+	dialog	Folk1		そうだ。それもこれも、おめえや俺が、	勇者さんを信じて、待っていたからさ。
+	dialog	Folk1		信じる心ってのは大事だな……。
+	dialog	FolkGirl	うん……。
+	dialog	FolkGirl	……（いいこと言ってるんだけど、	なんだろう、この説得力のなさ……）。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×ダイオウサソリ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-11H-0]
+Begin
+	target		Folk1
+	target		KingScorpion
+
+	dialog	Folk1			のわぁ、こいつ、なんでこんなところに！
+	dialog	KingScorpion	きしゃぁあああっ！（喜）
+	dialog	Folk1			で、でけえ！　これはやべえ！
+	text	村の男は、逃げ出した！
+
+	move	Folk1	InitialPlace_Folk1	1.0
+
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人１×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-13I-0]
+Begin
+	target		Folk1
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	2
+	condition	Folk1	C2-13I	0
+
+	dialog	Folk1		？　今何か気配が……
+	dialog	Folk1		……ねずみかな？
+	dialog	WaterSpirit	やっぱり普通の人には	ボクの姿は見えないぽ。
+	dialog	WaterSpirit	べ、別に期待していたわけではないぽ。
+	set	Folk1	C2-13I	1
+
+End
+[C2-13I-1]
+Begin
+	target		Folk1
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	2
+	condition	Folk1	C2-13I	1
+
+	dialog	WaterSpirit	ふーんだ、ぽ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人２×女性
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-14F-0]
+Begin
+	target		Folk2
+	target		FolkWoman
+	condition	Hero	vs_scorpion	0
+
+	dialog	FolkWoman	元気を出して。勇者さまがきっと	なんとかしてくださいますわ。
+	dialog	Folk2		……そうですね。	ここで私が落ち込んでいても……。
+	dialog	FolkWoman	そうですよ！　あなたのウシ……	ハナコちゃんは喜びませんわ！
+	dialog	Folk2		……。
+	dialog	Folk2		ハナコぉ……。
+	dialog	FolkWoman	……（ハナコの名前出しちゃいけなかったかしら…	次は気を付けよう……）。
+End
+	;; 村人２×女性
+	[C1-15F-0]
+	Begin
+		target		Folk2
+		target		FolkWoman
+		condition	Hero	vs_scorpion	1
+	
+		call-event	C1-14F-0
+	End
+[C1-16F-0]
+Begin
+	target		Folk2
+	target		FolkWoman
+	condition	Hero	vs_scorpion	2
+
+	dialog	FolkWoman	元気をお出しください。
+	dialog	FolkWoman	私、今こそ勇者さまはあのサソリを	退治できると思うんです！
+	dialog	Folk2		最近お会いするかた、	みなさんそう仰います。
+	dialog	Folk2		……そうですよね。	信じて待つことにします。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人２×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-14G-0]
+Begin
+	target		Folk2
+	target		FolkGirl
+	condition	Hero	vs_scorpion	0
+
+	dialog	FolkGirl	勇者さま、きっと、あのオバケサソリを	退治してきてくれるよ。
+	dialog	FolkGirl	だから、元気を出して！
+	dialog	Folk2		幼い君にまで励まされるとは。	なんと私は情けない男でしょう。
+	dialog	Folk2		ありがとう。元気づけてくれて。
+End
+	;; 村人１×女の子
+	[C1-15G-0]
+	Begin
+		target		Folk2
+		target		FolkGirl
+		condition	Hero	vs_scorpion	1
+	
+		call-event	C1-14G-0
+	End
+[C1-14G-0]
+Begin
+	target		Folk2
+	target		FolkGirl
+	condition	Hero	vs_scorpion	2
+
+	dialog	FolkGirl	あのね！	さっき勇者さまを見かけたの！	なんか、前と顔つきが変わってて、びっくりしたの！
+	dialog	FolkGirl	今の勇者さまなら、	あんなサソリ、イチコロね！
+	dialog	Folk2		イチコロですか。	これは期待が持てますね。
+	dialog	FolkGirl	そうよ！　パパも言ってたもん！	イチコロに決まってるんだから！
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人２×ダイオウサソリ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-14H-0]
+Begin
+	target		Folk2
+	target		KingScorpion
+
+	dialog	Folk2			こ、こいつはハナコの仇!?
+	dialog	KingScorpion	きしゃぁあああっ！（哀）
+	dialog	Folk2			わ、わたしは美味しくないですよっ！
+	text	村の若者は、逃げ出した！
+
+	move	Folk2	InitialPlace_Folk2	1.0
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 村人２×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-16I-0]
+Begin
+	target		Folk2
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	2
+	condition	Folk2	C2-16I	0
+
+	dialog	Folk2		!?
+	dialog	Folk2		うわ、なんでしょう、	何か今鋭い視線を感じましたが……。
+	dialog	Folk2		……知らん知らん。	何も見とらん、何も聞いとらん。
+	dialog	WaterSpirit	おい！　失礼な奴だぽ。
+	dialog	Folk2		ぞわわわ……怖い怖い。ひゃー！
+	dialog	WaterSpirit	本当に失礼な奴ぽ！　ぷんぷん！
+
+	set	Folk2	C2-16I	1
+End
+[C2-16I-1]
+Begin
+	target		Folk2
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	2
+	condition	Folk2	C2-16I	1
+
+	dialog	Folk2		ひいっ！　まただ。の、呪われた!?……
+	dialog	WaterSpirit	おい！　ボクはそんな酷いことはしないぽ！
+	dialog	Folk2		ひゃー！　なんまんだぶなんまんだぶ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女性×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-17G-0]
+Begin
+	target		FolkWoman
+	target		FolkGirl
+	condition	Hero	vs_scorpion	0
+
+	dialog	FolkWoman	あら、どうしたの？　何か心配事？
+	dialog	FolkGirl	わたし、勇者さまがあのオバケサソリを	倒してくれるって信じてるんだけど、	何か嫌な予感がするの。
+	dialog	FolkWoman	考えすぎですよ。	勇車さまはきっと、オバケサソリを	退治して戻って来てくれます。
+	dialog	FolkGirl	うん……	（がんばれ勇者さま。ドキドキ……）。
+End
+	;; 女性×女の子
+	[C2-18G-0]
+	Begin
+		target		FolkWoman
+		target		FolkGirl
+		condition	Hero	vs_scorpion	1
+	
+		call-event	C2-17G-0
+	End
+[C2-19G-0]
+Begin
+	target		FolkWoman
+	target		FolkGirl
+	condition	Hero	vs_scorpion	2
+
+	dialog	FolkWoman	勇者さまをご覧になりましたか？
+	dialog	FolkGirl	うん！	なんか、顔つきが逞しくなったっていうか、	ちょっと頼りがいが出てきたっていうか……。
+	dialog	FolkGirl	なんか、うまく言えないけど、	変わったの！
+	dialog	FolkWoman	あなたもそう思う？	私もそう思ったわ。
+	dialog	FolkGirl	きっとね、ふらぐが	立ったんだと思うよ！
+	dialog	FolkWoman	ふらぐ？
+	dialog	FolkGirl	うん！　なんか、かっこいいこと言ったり、	幸せになりそうになると、ふらぐが立つんだって。	パパが言ってた。
+	dialog	FolkWoman	……そ、そうなんだ……	（それって死亡フラグじゃ……）。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女性×ダイオウサソリ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-17H-0]
+Begin
+	target		FolkWoman
+	target		KingScorpion
+
+	dialog	FolkWoman		きゃああっ！
+	text	村の女は、逃げ出した！
+	text	しかし、まわりこまれてしまった！
+	dialog	KingScorpion	きしゃぁあああっ！（楽）
+	dialog	FolkWoman		……オメエも調子に乗るんじゃねえ！
+	text	村の女は、逃げ出した！
+
+	move	FolkWoman	InitialPlace_FolkWoman	1.0
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女性×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-19I-0]
+Begin
+	target		FolkWoman
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	2
+	condition	Folk2	C2-19I	0
+
+	dialog	WaterSpirit	フ〜ンフフ〜ン♫
+	dialog	FolkWoman	……この歌声は！
+	dialog	WaterSpirit	！
+	dialog	WaterSpirit	ボクの声が聞こえるぽ!?
+	dialog	FolkWoman	今、楽しげに歌う声が聞こえたような……。
+	dialog	WaterSpirit	〜し〜ずか〜なこ〜は〜んの♫
+	dialog	FolkWoman	ああっ、だんだんと声が……	歪んで……掠れて……。
+	dialog	FolkWoman	聞こえなくなってしまいましたわ！
+	dialog	FolkWoman	……。
+	dialog	WaterSpirit	……なんか、ボクが音痴だって	言われているみたいで嫌だぽ。
+
+	set	Folk2	C2-19I	1
+End
+[C2-19I-1]
+Begin
+	target		FolkWoman
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	2
+	condition	Folk2	C2-19I	1
+
+	dialog	WaterSpirit	中途半端に聞こえるのも、	ちょっと困りものだぽ。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女の子×ダイオウサソリ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-20H-0]
+Begin
+	target		FolkGirl
+	target		KingScorpion
+
+	dialog	FolkGirl		ひゃあ！　出たあ！
+	dialog	KingScorpion	きしゃぁあああっ！（驚）
+	text	女の子は、逃げ出した！
+
+	move	FolkGirl	InitialPlace_FolkGirl	1.0
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 女の子×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-22I-0]
+Begin
+	target		FolkGirl
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	2
+	condition	Folk2	C2-22I	0
+
+	dialog	WaterSpirit	あ、可愛い女の子だぽお。
+	dialog	FolkGirl	？
+	dialog	WaterSpirit	……でも、どうせボクの姿は	この子にも見えないぽ。
+	dialog	FolkGirl	……見えるよ。
+	dialog	WaterSpirit	ぽぽぽぽぽっ！	びっくりしたぽ！
+	dialog	FolkGirl	こんにちは……	あなた、だぁれ？
+	dialog	WaterSpirit	ボ、ボクは泉の精っぽ。
+	dialog	WaterSpirit	……。
+	dialog	WaterSpirit	……あのー。
+	dialog	FolkGirl	なぁに？
+	dialog	WaterSpirit	もしイヤでなければ、	ボクとお友達になって欲しいっぽ。
+	dialog	FolkGirl	いいよ。よろしくね！
+
+	set	Folk2	C2-22I	1
+End
+[C2-22I-1]
+Begin
+	target		FolkGirl
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	2
+	condition	Folk2	C2-22I	1
+
+	dialog	WaterSpirit	何して遊ぶぽ？
+	dialog	FolkGirl	泉の精っぽさんの	好きなことなら何でもいいよ！
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ダイオウサソリ×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-25I-0]
+Begin
+	target		KingScorpion
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	2
+	condition	Folk2	C2-25I	0
+
+	dialog	KingScorpion	キシャ？　キシャシャ？
+	dialog	WaterSpirit		へへーん、オマエにもボクは見えないぽ。
+	dialog	WaterSpirit		油性マジックでイタズラ書きしてやるぽ。
+	dialog	KingScorpion	キシャシャー？（呆）
+	dialog	WaterSpirit		ぽっ！　間抜けだぽ！
+
+	set	Folk2	C2-25I	1
+End
+[C2-25I-1]
+Begin
+	target		KingScorpion
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	2
+	condition	Folk2	C2-25I	1
+
+	dialog	WaterSpirit		ぽっぽっぽ。次は、オデコに肉って書いてやるぽ！
+	dialog	KingScorpion	キシャシャー？（呆）
+End
+

@@ -1,0 +1,295 @@
+﻿;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 第三章　勇者のイベント
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; プロローグ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C3-2C-0]
+Begin
+	prologue
+
+	move	Hero	ClosePlace_Folk2	0.0
+
+	fadein	1.0
+
+	dialog	Folk2	おお、勇者どの、	ありがとうございました。
+	dialog	Folk2	これで、ハナコも浮かばれる	というものです。
+	dialog	Folk2	そもそも、あのような巨大なサソリなど、	これまで見かけたこともありませんでした。
+	dialog	Folk2	森の奥で異変が起こり、	それを逃れて村に降りてきたのだ、	という者もいますが……。
+
+	play	rpg_system06
+	show	Dragon
+
+	set	Hero	vs_dragon	1
+End
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×長老
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5C-0]
+Begin
+	target	Hero
+	target	Elder
+	condition	Hero	vs_dragon	1
+	condition	Hero	C1-5C	0
+
+	dialog	Elder	ほっほっ。また、ウチの村人の抱える	トラブルを解消してくれたそうじゃな、	感謝するぞい。
+	dialog	Elder	ところで……既に聞いたかもしれぬが、	森の奥で大きなツノを持つドラゴンが	現れたらしいのじゃ。
+	dialog	Elder	ここ数十年、ドラゴンが	現れたことなんぞ	一度も無かったのじゃが……。	
+	dialog	Elder	また、そのドラゴンは何らかの宝物を	守護している、という噂もある。
+	dialog	Elder	そうなると、気が立っていて厄介じゃろうな。	どうにかならんもんかのう……。
+
+	set		Hero	C1-5C	1
+	set		Hero	talk_to_elder	1
+	evaluate-event	C1-23C-0
+End
+[C1-5C-1]
+Begin
+	target	Hero
+	target	Elder
+	condition	Hero	vs_dragon	1
+	condition	Hero	C1-5C	1
+
+	dialog	Elder	宝物を守護する、いわゆるガーディアンと	呼ばれるタイプのドラゴンは……
+	dialog	Elder	近寄るものを敵と認識し、	誰彼かまわず攻撃を仕掛けるそうじゃ。
+	dialog	Elder	トレジャーハンター以外には、	厄介な存在じゃ……。
+
+	set		Hero	talk_to_elder	1
+	evaluate-event	C1-23C-0
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×村人１
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5D-0]
+Begin
+	target		Hero
+	target		Folk1
+	condition	Hero	vs_dragon	1
+	condition	Hero	C1-5D	0
+
+	dialog	Folk1	おい、聞いたかい勇者さん。
+	dialog	Folk1	北西の森の奥深く、	大きなツノをもったドラゴンが現れて、	付近の住民が困っているらしいぜ。
+
+	set		Hero	C1-5D	1
+	set		Hero	talk_to_folk1	1
+	evaluate-event	C1-23C-0
+End
+
+[C1-5D-1]
+Begin
+	target		Hero
+	target		Folk1
+	condition	Hero	vs_dragon	1
+	condition	Hero	C1-5D	1
+
+	dialog	Folk1	そんなに大きいツノ生やしてるなんて、	よっぽどお怒りにちげえねえぜ。	おーこわ。
+
+	set		Hero	talk_to_folk1	1
+	evaluate-event	C1-23C-0
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×村人２
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5E-0]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	vs_dragon	1
+	condition	Hero	C1-5E	0
+
+	dialog	Folk2	野生動物だったら、天敵でも現れなければ、	住処を出たりしないですよね。
+	dialog	Folk2	いったい、森の奥で何が起こって	いるのでしょうか……。
+
+	set		Hero	C1-5E	1
+End
+[C1-5E-1]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	vs_dragon	1
+	condition	Hero	C1-5E	1
+
+	dialog	Folk2	天敵……いや、もっと恐ろしいものが、	サソリを住処から追い出したのかもしれませんね。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×女性
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5F-0]
+Begin
+	target		Hero
+	target		FolkWoman
+	condition	Hero	vs_dragon	1
+	condition	Hero	C1-5F	0
+
+	dialog	FolkWoman	ドラゴンは、炎の息を吐くときに、	その長いツノで熱を逃がしていると聞きますわ。
+	dialog	FolkWoman	ツノを折ることができれば、	さしものドラゴンも弱体化することでしょう。
+
+	set		Hero	C1-5F	1
+	set		Hero	talk_to_folkwoman	1
+	evaluate-event	C1-23C-0
+End
+[C1-5F-1]
+Begin
+	target		Hero
+	target		FolkWoman
+	condition	Hero	vs_dragon	1
+	condition	Hero	C1-5F	1
+
+	dialog	FolkWoman	いったい、どうやってドラゴンの	あのカタい角を砕くことができるのでしょうか……。
+	set		Hero	talk_to_folkwoman	1
+	evaluate-event	C1-23C-0
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5G-0]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	vs_dragon	1
+	condition	Hero	C1-5G	0
+
+	dialog	FolkGirl	こんにちは！
+	dialog	FolkGirl	オトコは黙って直球勝負！	カタいものを砕くには、もっとカタいものをぶつけるんだ！	当たって砕けろ、だ！　ってパパが言ってたよ。
+
+	set		Hero	C1-5G	1
+	set		Hero	talk_to_folkgirl	1
+	evaluate-event	C1-23C-0
+End
+[C1-5G-1]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	vs_dragon	1
+	condition	Hero	C1-5G	1
+
+	dialog	FolkGirl	当たって砕けたら負けちゃってるよね、	っていうのは突っ込まないでおいたよ。	あたし、優しいでしょ！
+	set		Hero	talk_to_folkgirl	1
+	evaluate-event	C1-23C-0
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-5H-0]
+Begin
+	target		Hero
+	target		WaterSpirit
+	condition	Hero	vs_dragon	1
+	condition	Hero	C1-5H	0
+
+	dialog	WaterSpirit	……遊びに来てくれたぽ？
+	dialog	WaterSpirit	あ、いや、何でも無いぽ。
+	dialog	WaterSpirit	……///
+	dialog	WaterSpirit	べ、別に寂しかったわけでもないし、	遊びに来てくれたって勘違いしたわけでもないぽ！
+	dialog	WaterSpirit	もうひとついうと、	嬉しかったわけでもないぽ！
+
+	set		Hero	C1-5H	1
+End
+[C1-5H-1]
+Begin
+	target		Hero
+	target		WaterSpirit
+	condition	Hero	vs_dragon	1
+	condition	Hero	C1-5H	1
+
+	dialog	WaterSpirit	で、本当は遊びにきたんでぽ？
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×ロングホーンドラゴン
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-6I-0]
+Begin
+	target		Hero
+	target		Dragon
+	condition	Hero	vs_dragon	1
+
+	dialog	Dragon	ぎゃああす！！（怒）
+
+	message	Hero	battle	Dragon
+
+	text	ロングホーンドラゴンは、激しい炎を吐いた！
+	text	業炎が勇者の身体を焼き尽くす！
+	text	勇者は倒れてしまった……。
+
+	move	Hero	InitialPlace_Hero	0.5
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 強制イベント
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C1-23C-0]
+Begin
+	target			Hero
+	target			*		;; だれでもいい
+	condition		Hero	talk_to_elder		1
+	condition		Hero	talk_to_folk1		1
+	condition		Hero	talk_to_folkwoman	1
+	condition		Hero	talk_to_folkgirl	1
+
+	text		勇者は、森に現れたドラゴンに対抗するには、ドラゴンのツノを破壊し、	弱らせる以外に方法が無いと確信するにいたった。
+	text		しかし、有効な手段は見つけることができていなかった……。
+
+	fadeout	1.0
+	move	Elder		InitialPlace_Elder		0.0
+	move	Folk1		InitialPlace_Folk1		0.0
+	move	Folk2		InitialPlace_Folk2		0.0
+	move	FolkWoman	InitialPlace_FolkWoman	0.0
+	move	FolkGirl	InitialPlace_FolkGirl	0.0
+	move	Hero		ClosePlace_FolkWoman	0.0
+	fadein	1.0
+
+	dialog	FolkWoman		あら、勇者さま、ごきげんよう。
+	dialog	FolkWoman		お話しするのもお恥ずかしい限りなのですが、	私、家の鍵を無くしてしまい、	家に入ることができないんです。
+	dialog	FolkWoman		このところ、怪しい人影が家の近辺を	うごめいている、なんて噂もあります。
+	dialog	FolkWoman		盗賊だったら大変です。夜が来る前に、	鍵を見つけなければ……。
+
+	text					村人たち「ざわざわ…」
+
+
+	play	rpg_system06
+	show	DevilSoldier
+
+	dialog	Folk1			あぶねえっ！	てめえ、なにすんだっ！
+	dialog	Folk2			私の牛がーっ！
+	dialog	FolkGirl		パパーっ！	助けてーっ！！
+
+	dialog	DevilSoldier	我らが主、セツ王さまより	伝言を届けに来た。
+	dialog	DevilSoldier	愚かな人間ども。まもなく余は	1000年の眠りより目を覚ます。
+	dialog	DevilSoldier	これから始まる破壊と絶望の世を	楽しみに待つがよい。
+
+	play	rpg_system06
+	hide	DevilSoldier
+
+	dialog	Elder			……セツ王……。
+	dialog	Elder			ついにこのときが来おったか……	始まるのじゃな、災いの時が。
+
+	fadeout	4.0
+
+	;; （仮）エンディング
+	text	To Be Continued...
+
+	text	１画面伝説レジェンド　スタッフ
+	text	ゲームデザイン
+	text	中野敦
+	text	あすなこうじ
+	text	プログラム
+	text	太田篤志
+	text	中野敦
+	text	岩田永司
+	text	加藤政樹
+	text	グラフィック
+	text	永谷真之
+	text	サウンド
+	text	坂本節朗
+	text	矢野義人
+	text	シナリオ
+	text	永谷真之
+	text	end
+	text	この続きは「Uni mini hon」サポートサイトで公開する予定です。	サポートサイトについては、DVD 内の ReadMe.txt をご覧ください。
+
+	;; 操作できない（イベントが終わらない）ようにする
+	fadeout	Infinity
+
+End
+

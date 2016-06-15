@@ -1,0 +1,71 @@
+C:\Users\iwata\Downloads\0823\Bangya\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\iwata\Downloads\0823\Bangya\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Downloads\0823\Bangya\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Downloads\0823\Bangya\Temp\bin\Debug\UnityEditor.dll
+C:\Users\iwata\Downloads\0823\Bangya\Temp\bin\Debug\UnityEngine.dll
+C:\Users\iwata\Downloads\0823\Bangya\Temp\bin\Debug\nunit.framework.dll
+C:\Users\iwata\Downloads\0823\Bangya\obj\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Downloads\0823\Bangya\obj\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Downloads\Bangya 2\obj\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Downloads\Bangya 2\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Downloads\Bangya 2\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Downloads\Bangya 2\Temp\bin\Debug\UnityEditor.dll
+C:\Users\iwata\Downloads\Bangya 2\Temp\bin\Debug\UnityEngine.dll
+C:\Users\iwata\Downloads\Bangya 2\Temp\bin\Debug\nunit.framework.dll
+C:\Users\iwata\Downloads\Bangya 2\obj\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Downloads\Bangya20120924\Bangya 2\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Downloads\Bangya20120924\Bangya 2\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Downloads\Bangya20120924\Bangya 2\Temp\bin\Debug\UnityEditor.dll
+C:\Users\iwata\Downloads\Bangya20120924\Bangya 2\Temp\bin\Debug\UnityEngine.dll
+C:\Users\iwata\Downloads\Bangya20120924\Bangya 2\Temp\bin\Debug\nunit.framework.dll
+C:\Users\iwata\Downloads\Bangya20120924\Bangya 2\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\iwata\Downloads\Bangya20120924\Bangya 2\obj\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Downloads\Bangya20120924\Bangya 2\obj\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Documents\11_27\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Documents\11_27\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Documents\11_27\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\UnityEditor.dll
+C:\Users\iwata\Documents\11_27\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\UnityEngine.dll
+C:\Users\iwata\Documents\11_27\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\nunit.framework.dll
+C:\Users\iwata\Documents\11_27\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\iwata\Documents\11_27\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Documents\11_27\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Documents\11_28\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Documents\11_28\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Documents\11_28\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\UnityEditor.dll
+C:\Users\iwata\Documents\11_28\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\UnityEngine.dll
+C:\Users\iwata\Documents\11_28\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\nunit.framework.dll
+C:\Users\iwata\Documents\11_28\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\iwata\Documents\11_28\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Documents\11_28\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Documents\12-05\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Documents\12-05\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Documents\12-05\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\UnityEditor.dll
+C:\Users\iwata\Documents\12-05\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\UnityEngine.dll
+C:\Users\iwata\Documents\12-05\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\nunit.framework.dll
+C:\Users\iwata\Documents\12-05\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\iwata\Documents\12-05\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Documents\12-05\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Documents\12-11\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Documents\12-11\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Documents\12-11\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\UnityEditor.dll
+C:\Users\iwata\Documents\12-11\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\UnityEngine.dll
+C:\Users\iwata\Documents\12-11\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\nunit.framework.dll
+C:\Users\iwata\Documents\12-11\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\iwata\Documents\12-11\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Documents\12-11\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Documents\12-14\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Documents\12-14\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Documents\12-14\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\UnityEditor.dll
+C:\Users\iwata\Documents\12-14\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\UnityEngine.dll
+C:\Users\iwata\Documents\12-14\Bangya20121015_masa\Bangya 2\Temp\bin\Debug\nunit.framework.dll
+C:\Users\iwata\Documents\12-14\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\iwata\Documents\12-14\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Documents\12-14\Bangya20121015_masa\Bangya 2\obj\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Downloads\Bangya20121217\Bangya 2\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Downloads\Bangya20121217\Bangya 2\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\iwata\Downloads\Bangya20121217\Bangya 2\Temp\bin\Debug\UnityEditor.dll
+C:\Users\iwata\Downloads\Bangya20121217\Bangya 2\Temp\bin\Debug\UnityEngine.dll
+C:\Users\iwata\Downloads\Bangya20121217\Bangya 2\Temp\bin\Debug\nunit.framework.dll
+C:\Users\iwata\Downloads\Bangya20121217\Bangya 2\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\iwata\Downloads\Bangya20121217\Bangya 2\obj\Debug\Assembly-CSharp.dll
+C:\Users\iwata\Downloads\Bangya20121217\Bangya 2\obj\Debug\Assembly-CSharp.pdb

@@ -1,0 +1,8 @@
+C:\Unity\3dsound_submarine_ver.0.3\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Unity\3dsound_submarine_ver.0.3\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Unity\3dsound_submarine_ver.0.3\Temp\bin\Debug\UnityEditor.dll
+C:\Unity\3dsound_submarine_ver.0.3\Temp\bin\Debug\UnityEngine.dll
+C:\Unity\3dsound_submarine_ver.0.3\Temp\bin\Debug\nunit.framework.dll
+C:\Unity\3dsound_submarine_ver.0.3\obj\Debug\ResolveAssemblyReference.cache
+C:\Unity\3dsound_submarine_ver.0.3\obj\Debug\Assembly-CSharp-firstpass.dll
+C:\Unity\3dsound_submarine_ver.0.3\obj\Debug\Assembly-CSharp-firstpass.pdb

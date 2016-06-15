@@ -1,0 +1,459 @@
+﻿;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 第二章　勇者のイベント
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; プロローグ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-2C]
+Begin
+	prologue
+	fadein	1.0
+
+	dialog	Folk1	おう！　本当に退治してくれるとはな！
+	dialog	Folk1	助かったぜ。俺に出来ることがあれば、	何でも力になるぜ！
+	dialog	Folk1	そう言えばよ、となりの兄ちゃんの	話も聞いてやっちゃもらえねえか？
+	dialog	Folk1	詳しくはしらねえが、	なんでも家畜が襲われたとか……。
+
+	play	rpg_system06
+	show	KingScorpion
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×長老
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-5C-0]
+Begin
+	target	Hero
+	target	Elder
+	condition	Hero	vs_scorpion	0
+	condition	Hero	C2-5C	0
+
+	dialog	Elder	おお、勇者どの、さっそく村人を	助けてもらったようじゃな。
+	dialog	Elder	助かったぞ。それで……	前の話の続きじゃが……。
+	dialog	Elder	魔王は、大魔道士さまに封じられる間際、	不吉な予言を残したのじゃ。
+	dialog	Elder	1000年後、余は必ず蘇る。	愚かなる人間どもよ。それまでかりそめの	平和を謳歌するが良い……とな。
+	dialog	Elder	今年は魔王が封じられてちょうど1000年……。
+	dialog	Elder	そう、魔王復活の予言の年なのじゃ。
+
+	set		Hero	C2-5C	1
+End
+[C2-5C-1]
+Begin
+	target	Hero
+	target	Elder
+	condition	Hero	vs_scorpion	0
+	condition	Hero	C2-5C	1
+
+	dialog	Elder	はて、それで何じゃったか……えーと。ほら。
+	dialog	Elder	まあ、また聞きにくるがええ。
+End
+[C2-6C-0]
+Begin
+	target	Hero
+	target	Elder
+	condition	Hero	vs_scorpion				1
+	condition	Hero	is_water_spirit_appear	0	;; 本当は condition	WaterSpirit	is_appear	0	としたい.
+
+	dialog	Elder	おお、大丈夫か勇者どの。
+	dialog	Elder	解毒薬のありかは解らぬが、	南西にある泉の水には解毒作用があるという話じゃ。
+	dialog	Elder	もっとも、あの泉の周りには	いつも謎の気配に満ちておって、	訪れる者もおらぬが……。
+
+	play	rpg_system05
+	show	WaterSpirit
+
+	set		Hero	is_water_spirit_appear	1
+End
+
+[C2-6C-0-1]
+Begin
+	target	Hero
+	target	Elder
+	condition	Hero	vs_scorpion				1
+	condition	Hero	is_water_spirit_appear	1
+
+	dialog	Elder	おお、大丈夫か勇者どの。
+	dialog	Elder	解毒薬のありかは解らぬが、	南西にある泉の水には解毒作用があるという話じゃ。
+	dialog	Elder	もっとも、あの泉の周りには	いつも謎の気配に満ちておって、	訪れる者もおらぬが……。
+
+End
+
+[C2-7C-0]
+Begin
+	target	Hero
+	target	Elder
+	condition	Hero	vs_scorpion	2
+	condition	Hero	C2-7C	0
+
+	dialog	Elder	もうすっかり大丈夫のようじゃな。
+	dialog	Elder	休む暇も与えられず心苦しいのだが……
+	dialog	Elder	あのサソリを退治する方法、	見つけてくだされ！
+
+	set	Hero	C2-7C	1
+End
+[C2-7C-1]
+Begin
+	target	Hero
+	target	Elder
+	condition	Hero	vs_scorpion	2
+	condition	Hero	C2-7C	1
+
+	dialog	Elder	頼みましたぞ、勇者どの。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×村人１
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-5D-0]
+Begin
+	target	Hero
+	target	Folk1
+	condition	Hero	vs_scorpion	0
+	condition	Hero	C2-5D	0
+
+	dialog	Folk1	俺の頼みも聞いてくれたろ？	あんな感じで、となりの兄ちゃんの	頼みも聞いてやってくれよ。
+	dialog	Folk1	な、頼んだぜ！
+
+	set		Hero	C2-5D	1
+End
+[C2-5D-1]
+Begin
+	target	Hero
+	target	Folk1
+	condition	Hero	vs_scorpion	0
+	condition	Hero	C2-5D	1
+
+	dialog	Folk1	思い出した、でかいサソリだったな。	あいつの家畜を襲ったってバケモノは。
+	dialog	Folk1	毒持ってんのはやだよなあ。	絶対さされたくねえよなあ。
+	dialog	Folk1	あんたもそう思うだろ？
+End
+[C2-6D-0]
+Begin
+	target	Hero
+	target	Folk1
+	condition	Hero	vs_scorpion	1
+	condition	Hero	C2-6D	0
+
+	dialog	Folk1	おいおい、勇者さんよぉ、	すげぇ顔色だな。
+	dialog	Folk1	どうにかしてやりてぇけどよ。	どうすりゃいいんだい？
+	dialog	Folk1	いや、俺が聞きてぇよ。	なんてこった。
+
+	set		Hero	C2-6D	1
+End
+[C2-6D-1]
+Begin
+	target	Hero
+	target	Folk1
+	condition	Hero	vs_scorpion	1
+	condition	Hero	C2-6D	1
+
+	dialog	Folk1	長老……長老なら	何か知ってるんじゃねえか？
+	dialog	Folk1	ってか、まだいたんかい。	早く何とかしねえと、死ぬぞ。マジで。
+End
+[C2-7D-0]
+Begin
+	target	Hero
+	target	Folk1
+	condition	Hero	vs_scorpion	2
+	condition	Hero	C2-7D	0
+
+	dialog	Folk1	いやー、今回は心配したよ。	何か、大変なことになっちまったな。
+	dialog	Folk1	何でも力になる、なんつったけどよ、	俺は役立たずだよ、実際。
+	dialog	Folk1	でも次こそ、あんたの役に立ってやる。
+
+	set		Hero	C2-7D	1
+End
+[C2-7D-1]
+Begin
+	target	Hero
+	target	Folk1
+	condition	Hero	vs_scorpion	2
+	condition	Hero	C2-7D	1
+
+	dialog	Folk1	でも、本当にどうすればいいかわからねぇときには、	今日みたいに役立たずなんだろうなあ、俺。
+	dialog	Folk1	てか、まだいたんかーい！	聞いてた？　聞いてた？
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×村人２
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-5E-0]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	vs_scorpion	0
+	condition	Hero	C2-5E	0
+
+	dialog	Folk2	おお、勇者さま。聞いてください！
+	dialog	Folk2	実は西の荒れ地を安く購入したんです	。ウシを連れて開墾を始めたのですが……。
+	dialog	Folk2	どこからともなく、デカいサソリが現れ、	私たちに襲い掛かってきたのです。
+	dialog	Folk2	私は一命をとりとめましたが、	大事にしていた家族同然のウシが……。
+	dialog	Folk2	お願いです！　ウシの……	ハナコの仇を取ってください！　ううううう。
+
+	set	Hero	C2-5E	1
+End
+[C2-5E-1]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	vs_scorpion	0
+	condition	Hero	C2-5E	1
+
+	dialog	Folk2	うううう、ハナコぉ……。
+End
+[C2-6E-0]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	vs_scorpion	1
+
+	dialog	Folk2	勇者さま！　そのお姿は……。
+	dialog	Folk2	よもや、あのダイオウサソリの毒を	お浴びになられたのではありますまいな！
+	dialog	Folk2	あああ！　何ということだ。	ハナコだけでなく、勇者さままでも……。
+	dialog	Folk2	ハナコ……。
+
+End
+[C2-7E-0]
+Begin
+	target		Hero
+	target		Folk2
+	condition	Hero	vs_scorpion	2
+
+	dialog	Folk2	勇者さま。ご無事でしたか！
+	dialog	Folk2	おお！　カミよ！	感謝いたします。
+	dialog	Folk2	さあ、今度こそ、	憎きあのオオサソリを退治してください！
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×女性
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-5F-0]
+Begin
+	target		Hero
+	target		FolkWoman
+	condition	Hero	vs_scorpion	0
+	condition	Hero	C2-5F	0
+
+	dialog	FolkWoman	サソリの毒は神経毒と言って、	刺された直後に麻痺状態に……。
+	dialog	FolkWoman	酷い場合にはそのまま	死に至ることがあると聞きます。
+
+	set	Hero	C2-5F	1
+End
+[C2-5F-1]
+Begin
+	target		Hero
+	target		FolkWoman
+	condition	Hero	vs_scorpion	0
+	condition	Hero	C2-5F	1
+
+	dialog	FolkWoman	サソリに出会ったときには、	お気をつけください。
+End
+[C2-6F-0]
+Begin
+	target		Hero
+	target		FolkWoman
+	condition	Hero	vs_scorpion	1
+
+	dialog	FolkWoman	お気分はいかがでしょうか、	勇者さま
+	dialog	FolkWoman	サソリの毒は神経毒と言って、	刺された直後に麻痺状態に……。
+	dialog	FolkWoman	酷い場合にはそのまま死に	至ることがあると聞きます。
+	dialog	FolkWoman	この程度で済んでいるのは幸運ですわ。	でも早く何とかしないと……。
+
+End
+[C2-7F-0]
+Begin
+	target		Hero
+	target		FolkWoman
+	condition	Hero	vs_scorpion	2
+
+	dialog	FolkWoman	勇者さま……何か、霊的な何かに	お護りされているのを感じます……。
+	dialog	FolkWoman	サソリの猛毒を受けられてから、	いったい何が起こったのでしょうか……。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×女の子
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-5G-0]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	vs_scorpion	0
+
+	dialog	FolkGirl	こんにちわ！
+	dialog	FolkGirl	オトコには、負けると解っていても	戦わなければならない時がある、	ってパパが言ってたよ。
+	dialog	FolkGirl	オトコって、大変だね～。
+	dialog	FolkGirl	じゃ、頑張ってね～。
+End
+[C2-6G-0]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	vs_scorpion	1
+	condition	Hero	C2-6G	0
+
+	dialog	FolkGirl	ひゃあ！	どうしたのその顔色！土気色だよ！
+	dialog	FolkGirl	パパ、パパー！	勇者さまが、勇者さまが！！
+	set	Hero	C2-6G	1
+End
+[C2-6G-1]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	vs_scorpion	1
+	condition	Hero	C2-6G	1
+
+	dialog	FolkGirl	どうしようどうしよう！
+End
+[C2-7G-0]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	vs_scorpion	2
+	condition	Hero	C2-7G	0
+
+	dialog	FolkGirl	ぐす…大丈夫だった？	心配したんだよ。
+	dialog	FolkGirl	でも、勇者さま、前と顔つきが変わったね！	なんか、逞しくなったみたい！
+	dialog	FolkGirl	りたーんまっち、してみる？
+	set	Hero	C2-7G	1
+End
+[C2-7G-1]
+Begin
+	target		Hero
+	target		FolkGirl
+	condition	Hero	vs_scorpion	2
+	condition	Hero	C2-7G	1
+
+	dialog	FolkGirl	りたーんまっちって、	何だったっけ……。
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×ダイオウサソリ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-5H-0]
+Begin
+	target		Hero
+	target		KingScorpion
+	condition	Hero	vs_scorpion	0
+
+	dialog	KingScorpion	きしゃぁあああっ！！（怒）
+
+	message	Hero	battle	KingScorpion		;;	戦闘
+
+	text	ダイオウサソリは、毒針を勢いよく振り回した！
+	text	毒針が勇者の身体に突き刺さる！
+	text	勇者は倒れてしまった……。
+
+	fadeout	2.0
+
+	text	勇者はダイオウサソリとの戦闘に敗れ、猛毒に犯されてしまった！
+	text	気がつくと、村の女性に介抱されていたのだった……。
+
+	set	Hero	vs_scorpion	1
+
+	move	Hero	ClosePlace_FolkWoman	0.0
+
+	fadein	1.0
+
+	;;evaluate-event	C2-6F-0
+	;; move コマンドあとに evaluate-event が動作しない（接触しているオブジェクトが
+	;; 更新されない）ので、イベントの内容をコピーしてしまう.
+	dialog	FolkWoman	お気分はいかがでしょうか、	勇者さま
+	dialog	FolkWoman	サソリの毒は神経毒と言って、	刺された直後に麻痺状態に……。
+	dialog	FolkWoman	酷い場合にはそのまま	死に至ることがあると聞きます。
+	dialog	FolkWoman	この程度で済んでいるのは幸運ですわ。	でも早く何とかしないと……。
+End
+[C2-6H-0]
+Begin
+	target		Hero
+	target		KingScorpion
+	condition	Hero	vs_scorpion	1
+
+	dialog	KingScorpion	きしゃぁあああっ！！（侮）
+
+	message	Hero	battle	KingScorpion
+
+	text	ダイオウサソリは、毒針を勢いよく振り回した！
+	text	毒針が勇者の身体に突き刺さる！
+	text	勇者は倒れてしまった……。
+	move	Hero	InitialPlace_Hero	0.5
+End
+[C2-7H-0]
+Begin
+	target		Hero
+	target		KingScorpion
+	condition	Hero	vs_scorpion	2
+
+	dialog	KingScorpion	きしゃぁあああっ!?（焦）
+
+	message	Hero	battle	KingScorpion
+
+	play	rpg_system05
+	hide	KingScorpion
+
+	text	勇者は、ダイオウサソリを倒した！
+
+	fadeout	1.0
+
+	text	第二章　終
+	load	Events/c03_0_main.txt	Events/c03_0_sub.txt	;; 第三章のスクリプトへ
+End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 勇者×泉の精
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[C2-6I-0-0]
+Begin
+	target		Hero
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	1
+
+	dialog	WaterSpirit	何しに来たぽ！
+	dialog	WaterSpirit	む、オマエ、毒ってるぽ！
+
+	continue
+End
+[C2-6I-0-1]
+Begin
+	target		Hero
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	1
+
+	dialog	WaterSpirit	この泉の水を飲むぽ。
+
+	choice	Hero	C2-is_drink_water	はい	いいえ
+	continue
+End
+
+[C2-6I-1]
+Begin
+	target		Hero
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	1
+	condition	Hero	C2-is_drink_water	1
+
+	text	勇者は、泉の水を手で掬うと、一息に飲み込んだ。
+	text	体から毒が抜けていく……。
+
+	play	rpg_system13
+	text	なんと、毒の攻撃に対する耐性が著しく上昇した！
+
+	set	Hero	vs_scorpion	2
+End
+[C2-6I-2]
+Begin
+	target		Hero
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	1
+	condition	Hero	C2-is_drink_water	2
+
+	dialog	WaterSpirit	そんなこと言ってると、	すぐに動けなくなるぽ。
+	dialog	WaterSpirit	まあ、騙されたと思って	この泉の水をのむぽ。
+
+	call-event	C2-6I-0-1
+End
+
+[C2-7I-0]
+Begin
+	target		Hero
+	target		WaterSpirit
+	condition	Hero	vs_scorpion	2
+
+	dialog	WaterSpirit	べ、別にオマエのことを助けてやろう	なんて考えたわけじゃないぽ。
+	dialog	WaterSpirit	勘違いしないでほしいぽ
+End
+
+
